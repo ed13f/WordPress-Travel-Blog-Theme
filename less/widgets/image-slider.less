@@ -1,0 +1,43 @@
+article.featured-image-slider-container{
+		position:relative;
+		.slider-arrow{
+			color:black;
+			font-size:90px;
+			font-weight:800;
+			position:absolute;
+			top:45%;
+			&.left-arrow{
+				left:15vw;
+			}
+			&.right-arrow{
+				right:15vw;
+			}
+		}
+		div.slider-image-wrapper{
+			display:none;
+			width:100%;
+			// opacity:0;
+			img{
+				// max-width:1140px;
+				// margin:auto;
+				width:100%;
+				margin:0;
+				position:absolute;
+				z-index:-1;
+			}
+			&.active-img.first-image{
+					display:block;
+			}
+		}
+		
+		.slider-tracking-container{
+			color:blue;
+			font-size:55px;
+			position:absolute;
+			top:30px;
+			right:10%;
+			.active-dot{
+					color:white;
+			}
+		}
+	}
