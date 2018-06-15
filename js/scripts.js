@@ -97,5 +97,51 @@ $(document).ready(function(){
   			elementType == "image" ? elementAdded.fadeIn(fadeSpeed) : elementAdded
   		}
 	}
+
+	// ================================[Scroll Arrow Destinations Page]=======================================
+	// hover display arrows
+	$(".scroll-arrow").hover(function(){
+		var arrowContainer = $(this).closest($('.destination-scroll-arrows'))
+		var destinationContainer = arrowContainer.siblings('.continent-group-container');
+		var leftPos = destinationContainer.scrollLeft();
+		var isArrowLeft = $(this).hasClass("left-arrow")
+		if(isArrowLeft){
+			destinationContainer.animate({scrollLeft: leftPos - 4000}, 5000);	
+		} else{
+			destinationContainer.animate({scrollLeft: leftPos + 4000}, 5000);
+	  	}
+	},
+	function(){
+		$(".continent-group-container").stop();
+	})
+
+	//container hover show arrows
+	$('.continent-group-wrapper').hover(function(){
+		var arrowsContainer = $(this).find(".destination-scroll-arrows");
+		arrowsContainer.fadeIn(500);
+	},
+	function(){
+		var arrowsContainer = $(this).find(".destination-scroll-arrows");
+		arrowsContainer.fadeOut(500);
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
