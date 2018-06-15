@@ -1,18 +1,23 @@
 article.continent-group{
 	.max-width();
 	width:100vw;
-	& .continent-group-container{
-		text-align:center;
-		overflow: scroll;
-		white-space: nowrap;
-		// .display-flex();
-		& .destination-tile{
-			display:inline-block;
-			width:400px;
-			height:250px;
-			overflow:scroll;
-		}
+	margin:40px auto;
+	& .continent-group-wrapper{
+		position:relative;
+		& .continent-group-container{
+			text-align:center;
+			overflow: scroll;
+			white-space: nowrap;
+			position:relative;
+			// .display-flex();
+			& .destination-tile{
+				display:inline-block;
+				width:400px;
+				height:250px;
+				overflow:scroll;
+			}
 
-	}
+		}
+	}	
 
 }
