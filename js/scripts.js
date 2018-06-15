@@ -97,5 +97,51 @@ $(document).ready(function(){
   			elementType == "image" ? elementAdded.fadeIn(fadeSpeed) : elementAdded
   		}
 	}
+
+	// ================================[Scroll Arrow Destinations Page]=======================================
+	// hover display arrows
+	$(".scroll-arrow").hover(function(){
+		var leftPos = $('.continent-group-container').scrollLeft();
+		var isArrowLeft = $(this).hasClass("left-arrow")
+		if(isArrowLeft){
+			// var scroll = setInterval(function(){
+				// debugger
+				$(".continent-group-container").animate({scrollLeft: leftPos - 4000}, 5000);
+			// 	leftPos = $('.continent-group-container').scrollLeft();
+			// },100)
+			
+		} else{
+			// var scroll = setInterval(function(){
+				// debugger
+				$(".continent-group-container").animate({scrollLeft: leftPos + 4000}, 5000);
+			// 	leftPos = $('.continent-group-container').scrollLeft();
+			// },100)
+	  		
+	  	}
+		console.log("on");
+	},
+	function(){
+		$(".continent-group-container").stop();
+		console.log("Off");
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
