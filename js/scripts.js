@@ -119,14 +119,14 @@ $(document).ready(function(){
 	$('.continent-group-wrapper').hover(function(){
 		var arrowsContainer = $(this).find(".destination-scroll-arrows");
 		arrowsContainer.addClass("hover");
-		arrowsContainer.fadeIn(500, function(){
+		arrowsContainer.fadeIn(300, function(){
 			arrowsContainer.removeClass("hover");
 		});
 	},
 	function(){
 		var arrowsContainer = $(this).find(".destination-scroll-arrows");
 		arrowsContainer.addClass("hover");
-		arrowsContainer.fadeOut(500, function(){
+		arrowsContainer.fadeOut(300, function(){
 			arrowsContainer.removeClass("hover");
 		});
 	})
