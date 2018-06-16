@@ -118,11 +118,17 @@ $(document).ready(function(){
 	//container hover show arrows
 	$('.continent-group-wrapper').hover(function(){
 		var arrowsContainer = $(this).find(".destination-scroll-arrows");
-		arrowsContainer.fadeIn(500);
+		arrowsContainer.addClass("hover");
+		arrowsContainer.fadeIn(500, function(){
+			arrowsContainer.removeClass("hover");
+		});
 	},
 	function(){
 		var arrowsContainer = $(this).find(".destination-scroll-arrows");
-		arrowsContainer.fadeOut(500);
+		arrowsContainer.addClass("hover");
+		arrowsContainer.fadeOut(500, function(){
+			arrowsContainer.removeClass("hover");
+		});
 	})
 
 
