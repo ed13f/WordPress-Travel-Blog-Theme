@@ -130,6 +130,14 @@ $(document).ready(function(){
 			arrowsContainer.removeClass("hover");
 		});
 	})
+	// destination tile hover hide date
+	$(".destination-tile").hover(function(){
+		$(this).find(".date").addClass("active-date").fadeOut(100)
+	},
+	function(){
+		$(this).find(".date").removeClass("active-date").fadeIn(100)
+	})
+
 
 
 
