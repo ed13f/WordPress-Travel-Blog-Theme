@@ -27,6 +27,6 @@ $image_count = $query->post_count;
 
 	<div class="slider-tracking-container">
 		<?php for ($x = 1; $x <= $image_count; $x++) { ?>
-   			 <span class="slider-dot <?php echo $x == 1 ? 'active-dot' :''; ?>">&bull;</span>
+   			 <span class="slider-dot <?php echo $x == 1 ? 'active-dot' :''; ?>">&#176;</span>
 		<?php } ?>
 </article>	
