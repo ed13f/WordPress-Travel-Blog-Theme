@@ -11,7 +11,7 @@ $(document).ready(function(){
 		return sliderElementObject
 	}
 
-	var fadeSpeed = 1000
+	var fadeSpeed = 1500
 	function fadeOutImage(elementType, sliderElementObject){
 		var removeElement = sliderElementObject.activeElement.removeClass(sliderElementObject.selector)
 		elementType == "image" ? removeElement.fadeOut(fadeSpeed) : removeElement
