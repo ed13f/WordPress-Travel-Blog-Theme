@@ -5,12 +5,7 @@
 the_post();
 get_header();
 partial('nav.main-nav');
-
-?>
-
-<h1 class="title">photography</h1>
-
-<?php
-
+partial('heros.image-slider-hero');
+partial('sections.photo-grid-display');
 get_footer();
 ?>
