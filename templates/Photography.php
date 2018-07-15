@@ -5,7 +5,7 @@
 the_post();
 get_header();
 partial('nav.main-nav');
-partial('heros.image-slider-hero');
+partial('heros.photography');
 partial('sections.photo-grid-display');
 get_footer();
 ?>

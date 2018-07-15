@@ -137,7 +137,31 @@ $(document).ready(function(){
 	function(){
 		$(this).find(".date").removeClass("active-date").fadeIn(100)
 	})
+	// photography page
+	$(".image-gallery-image").hover(function(){
+		$(this).find(".image-screen").css("opacity", "0.25");
+		$(this).find(".image-screen").siblings("h2").show();
+	},
+	function(){
+		$(this).find(".image-screen").css("opacity", "0");
+		$(this).find(".image-screen").siblings("h2").hide();
+	});
 
+	$(".image-screen").on("click", function(){
+		var photoTile = $(this).closest(".image-gallery-image");
+		var attrName = photoTile.attr("name");
+		var selector = "div[name='" + attrName + "']";
+		var heroCounterPart = $(".featured-image-slider-container").find(selector);
+		var activeHero = $(".featured-image-slider-container").find(".active-img");
+		activeHero.hide().removeClass("active-img");
+		heroCounterPart.show().addClass("active-img");
+		$('html, body').animate({
+		    scrollTop: $(".photography").offset().top
+		}, 400);
+		clearInterval(setSliderInterval);
+		setSliderInterval = setInterval(sliderAutoTransition, sliderTime);
+		console.log(activeHero)
+	})
 
 
 
