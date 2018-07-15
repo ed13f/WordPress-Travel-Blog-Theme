@@ -28,9 +28,12 @@ wp_reset_query();
 		<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
 
 			?>
-			<div class="image-gallery-image" style="background-image:url(<?php the_post_thumbnail_url(); ?>); height:<?php echo $num_array[$count]; ?>px "></div>
-			
-
+			<div class="image-gallery-image" style="background-image:url(<?php the_post_thumbnail_url(); ?>); height:<?php echo $num_array[$count]; ?>px " name="id<?php echo strval(get_the_id());?>">
+				<h2 class="individual-photography-header"><?php the_title(); ?></h2>
+				<div class="image-screen">
+					
+				</div>
+			</div>
 			<?php $count += 1; 
 			$count == 5 ? $count = 0 : ""; ?>
 		<?php endwhile; endif; ?>
