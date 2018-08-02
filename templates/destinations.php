@@ -5,7 +5,8 @@
 the_post();
 get_header();
 partial('nav.main-nav');
-partial('heros.image-slider-hero');
+partial('heros.destination-hero');
+// partial('heros.image-slider-hero');
 partial('sections.content');
 partial('sections.continent-destination-groupings');
 

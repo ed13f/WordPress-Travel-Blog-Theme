@@ -1,14 +1,20 @@
 div.main-menu-class{
 	position:relative;
-	ul.menu{
+	height:10vh;
+	background-color: rgb(4,55,97);
+	ul.menu, ul.menu-main-menu{
 		.display-flex();
 		.flex-align-content-space-between();
 		position:absolute;
 		z-index:10;
 		width:60vw; 
-		margin:100px 20vw;
+		height: 10vh;
+		margin: auto 20vw;
 		& li{
+			position:relative;
 			text-align:center;
+			top: 6vh;
+    		height: 4vh;
 			.flex(1, 1, 1);
 		}
 	}
