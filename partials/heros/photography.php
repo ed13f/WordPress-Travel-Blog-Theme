@@ -1,4 +1,5 @@
 <header class="photography">
+	<div class="hero-short-screen"></div>
 	<?php 
 	$args=array(
 		'posts_per_page' => -1, 

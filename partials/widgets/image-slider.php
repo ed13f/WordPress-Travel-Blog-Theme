@@ -18,8 +18,8 @@ $image_count = $query->post_count;
 
 <article class="featured-image-slider-container">
 	<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-		<div class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " name="id<?php echo strval(get_the_id());?>">
-		<?php the_post_thumbnail();
+		<div class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " style="background-image:url('<?php the_post_thumbnail_url(); ?>')" name="id<?php echo strval(get_the_id());?>">
+		<?php
 		$counter +=1; ?>
 		</div>
 	<?php endwhile; endif; ?>

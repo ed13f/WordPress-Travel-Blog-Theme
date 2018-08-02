@@ -32,6 +32,10 @@ $(document).ready(function(){
 		var addElement = $(sliderElementObject.list.get(index)).addClass(sliderElementObject.selector)
 		elementType == "image" ? addElement.fadeIn(fadeSpeed) : addElement
 	}
+	function selectFadeInImage(elementType, sliderElementObject, select){
+		var addElement = sliderElementObject.sliderContainer.find(select).addClass(sliderElementObject.selector)
+		elementType == "image" ? addElement.fadeIn(fadeSpeed) : addElement
+	}
 
 	// slider interval rotation
 	var sliderTime = 10000
@@ -153,13 +157,36 @@ $(document).ready(function(){
 		var selector = "div[name='" + attrName + "']";
 		var heroCounterPart = $(".featured-image-slider-container").find(selector);
 		var activeHero = $(".featured-image-slider-container").find(".active-img");
-		activeHero.hide().removeClass("active-img");
-		heroCounterPart.show().addClass("active-img");
+
+
+		var elementList = selectSliderElements("image")
+		// debugger
+		fadeOutImage("image", elementList)
+		selectFadeInImage("image", elementList, selector)
+		// debugger
+
+
+
+
+		// activeHero.hide().removeClass("active-img");
+		// heroCounterPart.show().addClass("active-img");
+
+
+
+
+
 		$('html, body').animate({
 		    scrollTop: $(".photography").offset().top
 		}, 400);
 		clearInterval(setSliderInterval);
 		setSliderInterval = setInterval(sliderAutoTransition, sliderTime);
+
+
+
+
+
+
+
 		console.log(activeHero)
 	})
 
