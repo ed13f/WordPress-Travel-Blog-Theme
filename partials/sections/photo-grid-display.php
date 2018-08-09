@@ -20,12 +20,6 @@ wp_reset_query();
 
 ?>
 
-
-
-
-
-
-
 <section class="photo-grid-display">
 	<div class="grid-wrapper">
 		<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
@@ -42,8 +36,4 @@ wp_reset_query();
 			$count == 6 ? $count = 0 : ""; ?>
 		<?php endwhile; endif; ?>
 	</div>
-	
-
-
-
 </section>
