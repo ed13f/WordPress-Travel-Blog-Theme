@@ -1,9 +1,13 @@
 article.continent-group{
 	.max-width();
 	width:100vw;
+	padding:0 2%;
 	margin:40px auto;
 	& .continent-group-wrapper{
 		position:relative;
+		& .scroll-shadow{
+
+		}
 		& .continent-group-container{
 			text-align:center;
 			overflow: scroll;
@@ -17,19 +21,44 @@ article.continent-group{
 				overflow:scroll;
 				background-repeat: no-repeat;
     			background-size: cover;
-    			padding-top: 50px;
-    			margin:0 25px;
-    			& .date{
-    				    position: absolute;
-					    color: black;
-					    font-size: 20px;
-					    line-height: 20px;
-					    top: 0;
-					    left: 0;
-					    background-color: lightgrey;
-					    padding: 12px;
-					    opacity: .7;
+    			// padding-top: 50px;
+    			margin:0 25px;\
+    			&.last{
+    				margin-right:0;
     			}
+    			&.first{
+    				margin-left: 0;
+    			}
+    			a.link-screen{
+					z-index: 2;
+				    position: absolute;
+				    height: 100%;
+				    width: 100%;
+				    left: 0;
+				    top:0;
+				    background-color:#043761;
+				    opacity:0.4;
+				    &.active-fade-in{
+						opacity:0;
+					}
+				}
+    			& .date{
+				    position: absolute;
+				    color: black;
+				    font-size: 20px;
+				    line-height: 20px;
+				    top: 0;
+				    left: 0;
+				    background-color: lightgrey;
+				    padding: 12px;
+				    opacity: .7;
+				    z-index:2;
+    			}
+    			& h3.tile-title{
+					margin-top:70px;
+					z-index:3;
+					position:relative;
+				}
 			}
 
 		}

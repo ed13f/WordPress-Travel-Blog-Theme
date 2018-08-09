@@ -105,7 +105,8 @@ $(document).ready(function(){
 	// ================================[Scroll Arrow Destinations Page]=======================================
 	// hover display arrows
 	$(".scroll-arrow").hover(function(){
-		var arrowContainer = $(this).closest($('.destination-scroll-arrows'))
+		$(this).closest(".continent-group-wrapper").addClass("scroll-shadow", 300);
+		var arrowContainer = $(this).closest($('.destination-scroll-arrows'));
 		var destinationContainer = arrowContainer.siblings('.continent-group-container');
 		var leftPos = destinationContainer.scrollLeft();
 		var isArrowLeft = $(this).hasClass("left-arrow")
@@ -117,6 +118,7 @@ $(document).ready(function(){
 	},
 	function(){
 		$(".continent-group-container").stop();
+		$(".continent-group-wrapper").removeClass("scroll-shadow", 300);
 	})
 
 	//container hover show arrows
@@ -136,10 +138,16 @@ $(document).ready(function(){
 	})
 	// destination tile hover hide date
 	$(".destination-tile").hover(function(){
-		$(this).find(".date").addClass("active-date").fadeOut(100)
+		var tile = $(this)
+		tile.find(".date").addClass("active-date").fadeOut(300);
+		tile.find(".tile-title").addClass("active-date").fadeOut(300);
+		tile.find(".link-screen").addClass("active-fade-in", 300);
 	},
 	function(){
-		$(this).find(".date").removeClass("active-date").fadeIn(100)
+		var tile = $(this)
+		tile.find(".date").removeClass("active-date").fadeIn(300);
+		tile.find(".tile-title").removeClass("active-date").fadeIn(300);
+		tile.find(".link-screen").removeClass("active-fade-in", 300);
 	})
 	// photography page
 	$(".image-gallery-image").hover(function(){

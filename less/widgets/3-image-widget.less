@@ -13,12 +13,28 @@ div.regions-3-section{
 		margin:0 3% 0 0;
 		width: 32%;
 		background-size: cover;
+		
+		a.link-screen{
+			z-index: 1;
+		    position: absolute;
+		    height: 100%;
+		    width: 100%;
+		    left: 0;
+		    top:0;
+		    background-color:#043761;
+		    opacity:0.4;
+		    &.active-fade-in{
+				opacity:0;
+			}
+		}
 		&.last{
 			margin-right:0;
 		}
 
-		& h3{
+		& h3.tile-title{
 			margin-top:70px;
+			z-index:3;
+			position:relative;
 		}
 
 		& .date{
@@ -28,6 +44,7 @@ div.regions-3-section{
 		    line-height: 20px;
 		    top: 0;
 		    left: 0;
+		    z-index:3;
 		    background-color: lightgrey;
 		    padding: 12px;
 		    opacity: .7;
