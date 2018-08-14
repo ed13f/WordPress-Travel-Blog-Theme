@@ -139,14 +139,24 @@ $(document).ready(function(){
 	// destination tile hover hide date
 	$(".destination-tile").hover(function(){
 		var tile = $(this)
-		tile.find(".date").addClass("active-date").fadeOut(300);
-		tile.find(".tile-title").addClass("active-date").fadeOut(300);
-		tile.find(".link-screen").addClass("active-fade-in", 300);
+		tile.find(".date").fadeOut(500);
+		// tile.find(".tile-title").addClass("active-date").fadeOut(300);
+		tile.find(".tile-title").animate({
+		    opacity: 0.35
+		  }, 500, function() {
+		    // Animation complete.
+		  });
+		tile.find(".link-screen").addClass("active-fade-in", 500);
 	},
 	function(){
 		var tile = $(this)
-		tile.find(".date").removeClass("active-date").fadeIn(300);
-		tile.find(".tile-title").removeClass("active-date").fadeIn(300);
+		tile.find(".date").removeClass("active-date").fadeIn(500);
+		// tile.find(".tile-title").removeClass("active-date").fadeIn(300);
+		tile.find(".tile-title").animate({
+		    opacity: 1
+		  }, 500, function() {
+		    // Animation complete.
+		  });
 		tile.find(".link-screen").removeClass("active-fade-in", 300);
 	})
 	// photography page
