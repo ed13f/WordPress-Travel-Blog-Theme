@@ -21,10 +21,11 @@ div.regions-3-section{
 		    width: 100%;
 		    left: 0;
 		    top:0;
-		    background-color:#043761;
+		    background-color:@color-7;
 		    opacity:0.4;
 		    &.active-fade-in{
 				opacity:0;
+				z-index: 4;
 			}
 		}
 		&.last{
@@ -35,6 +36,10 @@ div.regions-3-section{
 			margin-top:70px;
 			z-index:3;
 			position:relative;
+			color:@color-6;
+			&.active-title{
+				opacity:0.25;
+			}
 		}
 
 		& .date{
