@@ -183,15 +183,8 @@ $(document).ready(function(){
 		selectFadeInImage("image", elementList, selector)
 		// debugger
 
-
-
-
 		// activeHero.hide().removeClass("active-img");
 		// heroCounterPart.show().addClass("active-img");
-
-
-
-
 
 		$('html, body').animate({
 		    scrollTop: $(".photography").offset().top
@@ -201,12 +194,29 @@ $(document).ready(function(){
 
 
 
-
-
-
-
 		console.log(activeHero)
 	})
+
+
+	// nav stick
+    var $mainMenu = $("#menu-main-menu");
+    var topOfNav = $mainMenu.offset().top;
+    // $(window).resize(function(){
+    //     console.log("resize");
+    //     topOfNav = $mainMenu.offset().top;
+    // });
+    $(window).scroll(function() {
+        if($(window).scrollTop() >= topOfNav +25) { //scrolled past the other div?
+            $mainMenu.addClass('sticky-nav');
+            // $(".nav-bar-logo").css("display","initial");
+            // $(".menu-item-home").css("display","none");
+        }
+        else{
+            $mainMenu.removeClass('sticky-nav');
+            // $(".nav-bar-logo").css("display","none");
+            // $(".menu-item-home").css("display","initial");
+        }
+    });
 
 
 
