@@ -1,21 +1,38 @@
 div.main-menu-class{
 	position:relative;
-	height:10vh;
+	// height:100px;
 	background-color: @color-7;
+	height: 100px;
 	ul.menu, ul.menu-main-menu{
 		.display-flex();
 		.flex-align-content-space-between();
 		position:absolute;
 		z-index:10;
-		width:60vw; 
-		height: 10vh;
-		margin: auto 20vw;
+		width:100vw; 
+		position:sticky;
+		top:35px;
+		// height: 80px;
+		padding:0 20vw;
+		// margin: auto 20vw;
+		font-size:20px;
+		background-color: @color-7;
+		&.sticky-nav{
+			position:fixed;
+			top:0;
+			margin-top:0;
+			// padding:0;
+			height:initial;
+			// z-index:3;
+		}
 		& li{
-			position:relative;
+			// position:relative;
 			text-align:center;
-			top: 6vh;
-    		height: 4vh;
+			// top: 40px;
+    		// height: 4vh;
 			.flex(1, 1, 1);
+			& a{
+				color:#ffffff;
+			}	
 		}
 	}
 
