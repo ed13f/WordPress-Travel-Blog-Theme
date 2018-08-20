@@ -20,8 +20,9 @@ wp_reset_query();
 
 ?>
 
-<section class="photo-grid-display">
-	<div class="grid-wrapper">
+<section class="photo-grid-display continent-group-wrapper">
+	<?php partial('widgets.destination-scroll-arrows'); ?>
+	<div class="grid-wrapper continent-group-container">
 		<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
 			
 

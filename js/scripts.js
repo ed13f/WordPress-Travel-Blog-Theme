@@ -105,6 +105,7 @@ $(document).ready(function(){
 	// ================================[Scroll Arrow Destinations Page]=======================================
 	// hover display arrows
 	$(".scroll-arrow").hover(function(){
+		console.log("yahhoooooo");
 		$(this).closest(".continent-group-wrapper").addClass("scroll-shadow", 300);
 		var arrowContainer = $(this).closest($('.destination-scroll-arrows'));
 		var destinationContainer = arrowContainer.siblings('.continent-group-container');
