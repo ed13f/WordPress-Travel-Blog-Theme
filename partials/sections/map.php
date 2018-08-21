@@ -48,7 +48,7 @@ $wpQueryJson = json_encode($modified_post_objects_list);
           mapTypeControl: false,
           // scaleControl: false,
           // draggable: false,
-          // disableDefaultUI: true,
+          disableDefaultUI: true,
           
           gestureHandling: 'cooperative',
           center: new google.maps.LatLng(16.128083,-72.651112),

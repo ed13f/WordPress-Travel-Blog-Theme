@@ -6,10 +6,6 @@ the_post();
 get_header();
 partial('nav.main-nav');
 partial('heros.destination-hero');
-?>
-
-<h1 class="title">About</h1>
-<?php
-
+partial('sections.content');
 get_footer();
 ?>
