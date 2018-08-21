@@ -1,8 +1,10 @@
 <?php 
 // $num_array = [225, 250, 275, 235];
 $num_array = [180, 245, 215, 225, 210, 200];
+// $num_array = [180, 245, 220, 200, 220, 245];
 // $num_array = [180, 200, 210, 215, 225, 245];
 $height_staddered_array = [10, 40, 20, 35, 5, 30];
+// $height_staddered_array = [10, 40, 5, 35, 5, 40];
 // $height_staddered_array = [ 5,10, 20, 30, 35, 40];
 $count = 0;
 
