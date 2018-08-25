@@ -68,10 +68,11 @@ $wpQueryJson = json_encode($modified_post_objects_list);
             var url = jsonMapArray[i]['url'];
                               
             var icon = {
-                url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                // scaledSize: new google.maps.Size(40, 60),
+                url: 'http://ricodesantis.com/images/travel_blog/Red_Pin_Emoji.png',
+
+                scaledSize: new google.maps.Size(30, 30),
                 origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(0, 34),
+                anchor: new google.maps.Point(15, 27),
             };
             var latLng = new google.maps.LatLng(lat, long);
             var marker = new google.maps.Marker({

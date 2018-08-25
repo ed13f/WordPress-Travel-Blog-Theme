@@ -1,5 +1,5 @@
 <?php 
-	$class = "continent-group-tile destination-tile";
+	$class = "destination-tile continent-group-tile";
 ?>
 
 
@@ -12,9 +12,12 @@
 				  if( ( $query->current_post + 1 ) == $query->post_count ){ $class .= ' last'; }
 				  if( $query->current_post == 0){ $class .= ' first'; } ?>
 
-				<?php partial('widgets.single-destination-tile', ['class' => $class]); ?>
-
-				<?php $class = "destination-tile"; ?>
+				<div class="<?php echo $class; ?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>)">
+					<a class="link-screen" href="<?php the_permalink(); ?>"></a>
+					<div class="date"><?php echo get_the_date("F / y"); ?></div>
+					<h3 class="tile-title"><?php the_title(); ?></h3> 
+				</div>
+				<?php $class = "destination-tile continent-group-tile"; ?>
 			<?php endwhile; endif; ?>
 		</div>
 	<div>	
