@@ -29,12 +29,15 @@ $south_america_args=array(
 $wp_south_america_query = new WP_Query( $south_america_args );
 wp_reset_query();
 
+
+$class_to_add = "flip"
+
 ?>
 
 
 <section class="continent-destination-groupings">
 	<?php partial('widgets.continent-group', ['query' => $wp_europe_query, 'continent_name' => "Europe"]); ?>
-	<?php partial('widgets.continent-group', ['query' => $wp_north_america_query, 'continent_name' => "North America"]); ?>
+	<?php partial('widgets.continent-group', ['query' => $wp_north_america_query, 'continent_name' => "North America", "class_to_add" => $class_to_add]); ?>
 	<?php partial('widgets.continent-group', ['query' => $wp_south_america_query, 'continent_name' => "South America"]); ?>
 	
 
