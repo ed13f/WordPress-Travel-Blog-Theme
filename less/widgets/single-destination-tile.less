@@ -1,18 +1,23 @@
-div.regions-3-section{
-	.max-width();
-	.display-flex();
-	position:relative;
-	width:100%;
-	padding:0 2%;
-	margin:auto;
-	& .region-widget-wrapper{
+.destination-tile{
 		position:relative;
 		height:250px;
 		text-align:center;
 		background-color: blue;
-		margin:0 3% 0 0;
-		width: 32%;
 		background-size: cover;
+		
+		&.region-widget-wrapper{
+			text-align:center;
+			margin:0 3% 0 0;
+			width: 32%;
+			background-size: cover;
+		}
+		&.continent-group-tile{
+			display:inline-block;
+			width:400px;
+			overflow:scroll;
+			background-repeat: no-repeat;
+			margin:0 25px;
+		}
 		
 		a.link-screen{
 			z-index: 1;
@@ -54,4 +59,3 @@ div.regions-3-section{
 		    opacity: .7;
 		}
 	}
-}

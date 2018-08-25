@@ -106,18 +106,23 @@ $(document).ready(function(){
 	// hover display arrows
 	$(".scroll-arrow").hover(function(){
 		console.log("yahhoooooo");
+
 		$(this).closest(".continent-group-wrapper").addClass("scroll-shadow", 300);
 		var arrowContainer = $(this).closest($('.destination-scroll-arrows'));
 		var destinationContainer = arrowContainer.siblings('.continent-group-container');
 		var leftPos = destinationContainer.scrollLeft();
 		var isArrowLeft = $(this).hasClass("left-arrow")
 		if(isArrowLeft){
+			$(this).addClass("slide-left");
 			destinationContainer.animate({scrollLeft: leftPos - 4000}, 5000);	
 		} else{
+			$(this).addClass("slide-right");
 			destinationContainer.animate({scrollLeft: leftPos + 4000}, 5000);
 	  	}
 	},
 	function(){
+		$(this).removeClass("slide-right");
+		$(this).removeClass("slide-left");
 		$(".continent-group-container").stop();
 		$(".continent-group-wrapper").removeClass("scroll-shadow", 300);
 	})

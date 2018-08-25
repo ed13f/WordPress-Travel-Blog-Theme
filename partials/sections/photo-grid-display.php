@@ -6,7 +6,7 @@ $num_array = [180, 245, 215, 225, 210, 200];
 $height_staddered_array = [10, 40, 20, 35, 5, 30];
 // $height_staddered_array = [10, 40, 5, 35, 5, 40];
 // $height_staddered_array = [ 5,10, 20, 30, 35, 40];
-$count = 0;
+$count = $left_image_count = 0;
 
 $args=array(
 	'posts_per_page' => -1, 
@@ -29,13 +29,18 @@ wp_reset_query();
 			
 
 			?>
-			<div class="image-gallery-image" style="background-image:url(<?php the_post_thumbnail_url(); ?>); height:<?php echo $num_array[$count]; ?>px; margin-top:<?php echo is_float( $count / 3 ) ? '' : $height_staddered_array[$count]; ?>px; " name="id<?php echo strval(get_the_id());?>">
+			<div class="image-gallery-image<?php echo( in_array($left_image_count, [0,1,2]) ? ' left-column' : ''); ?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>); height:<?php echo $num_array[$count]; ?>px; margin-top:<?php echo is_float( $count / 3 ) ? '' : $height_staddered_array[$count]; ?>px; " name="id<?php echo strval(get_the_id());?>">
+
 				<h2 class="individual-photography-header"><?php the_title(); ?></h2>
 				<div class="image-screen">
 					
+
+
+
 				</div>
 			</div>
-			<?php $count += 1; 
+			<?php  $count += 1;
+			$left_image_count += 1; 
 			$count == 6 ? $count = 0 : ""; ?>
 		<?php endwhile; endif; ?>
 	</div>
