@@ -1,68 +1,52 @@
 article.continent-group{
+	display:flex;
 	.max-width();
 	width:100vw;
 	padding:0 2%;
 	margin:40px auto;
-	& h2{
-		text-align:center;
-	}
-	& .continent-group-wrapper{
-		position:relative;
-		& .scroll-shadow{
-
-		}
-		& .continent-group-container{
+	&.flip{
+		flex-direction: row-reverse;
+		// & .destination-content{
+		// 	padding-left: 4%;
+		// 	padding-right:0 !important;
+		// }
+		// & h2{
+		// 	padding-left: 4%;
+		// 	padding-right: 0% !important;
+		// }
+		// & .continent-group-wrapper{
+		// 	padding-left: 4%;
+		// }
+	}	
+	& .continent-group-content{
+		flex:1;
+		& h2{
 			text-align:center;
-			overflow: scroll;
-			white-space: nowrap;
+			padding-right: 2%;
+		}
+		& .destination-content{
+			max-height: 170px;
+    		overflow: hidden;
+    		padding-right: 2%;
+		}
+	}
+	& .continent-group-slider-container{
+		flex:1;
+		position:relative;
+		width:1px;
+		& .continent-group-wrapper{
+			padding-right:2%;
 			position:relative;
-			// & .destination-tile{
-			// 	position:relative;
-			// 	display:inline-block;
-			// 	width:400px;
-			// 	height:250px;
-			// 	overflow:scroll;
-			// 	background-repeat: no-repeat;
-   //  			background-size: cover;
-   //  			// padding-top: 50px;
-   //  			margin:0 25px;
-   //  			a.link-screen{
-			// 		z-index: 2;
-			// 	    position: absolute;
-			// 	    height: 100%;
-			// 	    width: 100%;
-			// 	    left: 0;
-			// 	    top:0;
-			// 	    background-color:#043761;
-			// 	    opacity:0.4;
-			// 	    &.active-fade-in{
-			// 			opacity:0;
-			// 		}
-			// 	}
-   //  			& .date{
-			// 	    position: absolute;
-			// 	    color: black;
-			// 	    font-size: 20px;
-			// 	    line-height: 20px;
-			// 	    top: 0;
-			// 	    left: 0;
-			// 	    background-color: lightgrey;
-			// 	    padding: 12px;
-			// 	    opacity: .7;
-			// 	    z-index:2;
-   //  			}
-   //  			& h3.tile-title{
-			// 		margin-top:70px;
-			// 		z-index:3;
-			// 		position:relative;
-			// 	}
-			// }
-			// & .first{
-   //  			margin-left: 0;
-   //  		}
-   //  		& .last{
-   //  			margin-right:0;
-   //  		}
+			& .scroll-shadow{
+				position:relative;
+				width:100%;
+			}
+			& .continent-group-container{
+				text-align:center;
+				overflow: scroll;
+				white-space: nowrap;
+				position:relative;
+			}	
 
 		}
 	}	
