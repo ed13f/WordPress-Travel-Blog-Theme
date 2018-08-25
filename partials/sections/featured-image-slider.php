@@ -30,7 +30,7 @@ $image_count = $wp_query->post_count;
 
 	<div class="slider-tracking-container">
 		<?php for ($x = 1; $x <= $image_count; $x++) { ?>
-   			 <span class="slider-dot <?php echo $x == 1 ? 'active-dot' :''; ?>">&#176;</span>
+   			 <span class="slider-dot <?php echo $x == 1 ? 'active-dot' :''; ?>"><?php echo $x == 1 ? '&#x25A0;' :'&#x25A0;'; ?></span>
 		<?php } ?>
 	</div>	
 </article>	

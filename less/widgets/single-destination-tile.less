@@ -1,61 +1,64 @@
 .destination-tile{
-		position:relative;
-		height:250px;
+	position:relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height:250px;
+	&.region-widget-wrapper{
+		// position:relative;
+		// height:250px;
 		text-align:center;
-		background-color: blue;
-		background-size: cover;
-		
-		&.region-widget-wrapper{
-			text-align:center;
-			margin:0 3% 0 0;
-			width: 32%;
-			background-size: cover;
-		}
-		&.continent-group-tile{
-			display:inline-block;
-			width:400px;
-			overflow:scroll;
-			background-repeat: no-repeat;
-			margin:0 25px;
-		}
-		
-		a.link-screen{
-			z-index: 1;
-		    position: absolute;
-		    height: 100%;
-		    width: 100%;
-		    left: 0;
-		    top:0;
-		    background-color:@color-7;
-		    opacity:0.4;
-		    &.active-fade-in{
-				opacity:0;
-				z-index: 4;
-			}
-		}
-		&.last{
-			margin-right:0;
-		}
-		& h3.tile-title{
-			margin-top:70px;
-			z-index:3;
-			position:relative;
-			color:@color-6;
-			&.active-title{
-				opacity:0.25;
-			}
-		}
+		margin:0 3% 0 0;
+		width: 32%;
+		// background-size: cover;
+	}
 
-		& .date{
-			position: absolute;
-		    color: black;
-		    font-size: 20px;
-		    line-height: 20px;
-		    top: 0;
-		    left: 0;
-		    z-index:3;
-		    background-color: lightgrey;
-		    padding: 12px;
-		    opacity: .7;
+
+	&.continent-group-tile{
+		display:inline-block;
+		width:300px;
+		overflow:scroll;
+		margin:0 10px;
+	}
+	a.link-screen{
+		z-index: 1;
+	    position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    left: 0;
+	    top:0;
+	    background-color:@color-7;
+	    opacity:0.4;
+	    &.active-fade-in{
+			opacity:0;
+			z-index: 4;
 		}
 	}
+	& h3.tile-title{
+		margin-top:70px;
+		z-index:3;
+		position:relative;
+		color:@color-6;
+		&.active-title{
+			opacity:0.25;
+		}
+	}
+
+	& .date{
+		position: absolute;
+	    color: black;
+	    font-size: 20px;
+	    line-height: 20px;
+	    top: 0;
+	    left: 0;
+	    z-index:3;
+	    background-color: lightgrey;
+	    padding: 12px;
+	    opacity: .7;
+	}
+	&.first{
+		margin-left: 0;
+	}
+	&.last{
+		margin-right:0;
+	}
+}
