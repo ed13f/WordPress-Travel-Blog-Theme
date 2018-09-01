@@ -379,23 +379,30 @@ $wpQueryJson = json_encode($modified_post_objects_list);
               url: url,
             });
             var infoWindow = new google.maps.InfoWindow(), marker, i;
-            google.maps.event.addListener(marker, '', (function(marker, i) {
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
 
                     infoWindow.setContent( 
                       "<a class='info-window-link' href=" + this.url + ">" + 
+                        "<div class='info-box-wrapper'>" + 
+                          "<div class='info-box-screen'></div>" +
                         '<div class="info-box-container" style="background-image:url(' + this.imgUrl + ');">' + 
                           "<h3>" + this.title + "</h3>" +
-                        '</div>' + 
+                         '</div>' + 
+                        '</div>' +
                       "</a>"
 
 
+
                      );
+                    $('.gm-style-iw').prev('div').remove();
 
                     infoWindow.open(map, marker);
                 }
             })(marker, i));
+
           }
+
       }
     </script>
     <script async defer
