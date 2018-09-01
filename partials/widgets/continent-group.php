@@ -5,8 +5,10 @@
 
 <article class="continent-group <?php echo($class_to_add ? $class_to_add : ''); ?>">
 	<div class="continent-group-content">
-		<h2><?php echo $continent_name ?></h2>
-		<div class="destination-content"><?php the_content();?></div>
+		<div class="continent-group-content-container">
+			<h2><?php echo $continent_name ?></h2>
+			<div class="destination-content"><?php the_content();?></div>
+		</div>
 	</div>
 	<div class="continent-group-slider-container">
 		<div class="continent-group-wrapper">
