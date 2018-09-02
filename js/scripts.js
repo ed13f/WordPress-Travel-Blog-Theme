@@ -224,6 +224,16 @@ $(document).ready(function(){
         }
     });
 
+    // Animation test section
+        
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 120) {
+       console.log("HIIIIIIIIIIIIII")
+       var socialIcons = $(".footer-right").children().find("img").each(function(){ $(this).addClass('fadeInLeft'); });
+   }
+   $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 1000);
+   $(".hero-content-screen").animate({opacity: 0.25}, 1000);
+});
 
 
 

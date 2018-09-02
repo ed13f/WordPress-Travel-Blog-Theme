@@ -28,6 +28,10 @@ $wpQueryJson = json_encode($modified_post_objects_list);
 ?>
 
   <section class="map-section">
+    <div class="hero-content-screen">
+      <?php partial('widgets.hero-content'); ?>
+
+    </div>
     <div class="hero-short-screen"></div>
     <div class="map-screen"></div> 
     <div id="map"></div>
