@@ -30,8 +30,10 @@ wp_reset_query();
 
 			?>
 			<div class="image-gallery-image<?php echo( in_array($left_image_count, [0,1,2]) ? ' left-column' : ''); ?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>); height:<?php echo $num_array[$count]; ?>px; margin-top:<?php echo is_float( $count / 3 ) ? '' : $height_staddered_array[$count]; ?>px; " name="id<?php echo strval(get_the_id());?>">
-
-				<h2 class="individual-photography-header"><?php the_title(); ?></h2>
+				<div class="content-container">
+					<h2 class="individual-photography-header"><?php the_title(); ?></h2>
+					<div class="view-photo">View</div>
+				</div>
 				<div class="image-screen">
 					
 

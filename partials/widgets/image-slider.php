@@ -5,7 +5,7 @@ $args=array(
 	'posts_per_page' => -1, 
     'post_type'      => 'photograph',
     'category'       => 'featured-image',
-    '_shuffle_and_pick'     => 10,
+    '_shuffle_and_pick'     => -1,
 );
 
 $wp_query = new WP_Query( $args );
@@ -18,10 +18,16 @@ $image_count = $query->post_count;
 
 <article class="featured-image-slider-container">
 	<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+
+
 		<div class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " style="background-image:url('<?php the_post_thumbnail_url(); ?>')" name="id<?php echo strval(get_the_id());?>">
-			<div class="photo-location"><?php echo get_the_id(); ?></div>
-		<?php
-		$counter +=1; ?>
+			<div class="photo-location-wrapper">
+				<div class="photo-location"><em><?php the_title(); ?></em></div>
+				<div class="photo-subtext"><?php the_content(); ?></div>
+			</div>
+			
+		<?php $counter +=1; ?>
 		</div>
 	<?php endwhile; endif; ?>
 	</div>	
