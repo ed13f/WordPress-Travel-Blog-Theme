@@ -79,7 +79,7 @@ function create_post_type_photographs() {
       'has_archive' => true,
       'menu_icon'   => 'dashicons-format-image',
       'taxonomies' => array('category'),
-      'supports' => array( 'thumbnail', 'title' )
+      'supports' => array( 'thumbnail', 'title', 'editor' )
     )
   );
 }

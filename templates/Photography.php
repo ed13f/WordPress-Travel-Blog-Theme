@@ -1,7 +1,7 @@
 <?php
 
 # Template Name: Photography
-
+ 
 the_post();
 get_header();
 partial('nav.main-nav');

@@ -400,12 +400,26 @@ $wpQueryJson = json_encode($modified_post_objects_list);
 
                      );
                     $('.gm-style-iw').prev('div').remove();
+                    $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 750);
+                    $(".hero-content-screen").animate({opacity: 0}, 750);
 
                     infoWindow.open(map, marker);
                 }
             })(marker, i));
-
+            map.addListener('click', function() {
+              $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 750);
+              $(".hero-content-screen").animate({opacity: 0}, 750);
+            });
+            map.addListener('center_changed', function() {
+              $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 750);
+              $(".hero-content-screen").animate({opacity: 0}, 750);
+            });
+            map.addListener('zoom_changed', function() {
+              $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 750);
+              $(".hero-content-screen").animate({opacity: 0}, 750);
+            });
           }
+
 
       }
     </script>

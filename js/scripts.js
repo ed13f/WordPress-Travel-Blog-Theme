@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	// ================================[sections/featured-image-slider]=======================================
 	//slider Utility Functions
 	function selectSliderElements(elementType){
@@ -165,14 +166,20 @@ $(document).ready(function(){
 		  });
 		tile.find(".link-screen").removeClass("active-fade-in", 300);
 	})
+
+
 	// photography page
 	$(".image-gallery-image").hover(function(){
-		$(this).find(".image-screen").css("opacity", "0.25");
-		$(this).find(".image-screen").siblings("h2").show();
+		$(this).find(".image-screen").animate({opacity: 0.5}, 400,);
+		$(this).find(".content-container").animate({opacity: 1}, 400,);
+		// $(this).find(".individual-photography-header").show();
+		// $(this).find(".content-container").show();
 	},
 	function(){
-		$(this).find(".image-screen").css("opacity", "0");
-		$(this).find(".image-screen").siblings("h2").hide();
+		$(this).find(".image-screen").animate({opacity: 0}, 400,);
+		$(this).find(".content-container").animate({opacity: 0}, 400,);
+		// $(this).find(".individual-photography-header").hide();
+		// $(this).find(".content-container").hide();
 	});
 
 	$(".image-screen").on("click", function(){
@@ -193,7 +200,7 @@ $(document).ready(function(){
 		// heroCounterPart.show().addClass("active-img");
 
 		$('html, body').animate({
-		    scrollTop: $(".photography").offset().top
+		    scrollTop: $("body").offset().top
 		}, 400);
 		clearInterval(setSliderInterval);
 		setSliderInterval = setInterval(sliderAutoTransition, sliderTime);
@@ -231,19 +238,11 @@ $(window).scroll(function() {
        console.log("HIIIIIIIIIIIIII")
        var socialIcons = $(".footer-right").children().find("img").each(function(){ $(this).addClass('fadeInLeft'); });
    }
-   $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 1000);
-   $(".hero-content-screen").animate({opacity: 0.25}, 1000);
+
+   // Homepage Screen Fade
+   $(".hero-content-screen > .hero-content-wrapper").animate({opacity: 0}, 750);
+   $(".hero-content-screen").animate({opacity: 0.25}, 750);
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
