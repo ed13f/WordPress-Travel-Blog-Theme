@@ -5,7 +5,7 @@ $args=array(
 	'posts_per_page' => -1, 
     'post_type'      => 'photograph',
     'category'       => 'featured-image',
-    '_shuffle_and_pick'     => -1,
+    '_shuffle_and_pick'     => 10,
 );
 
 $wp_query = new WP_Query( $args );
