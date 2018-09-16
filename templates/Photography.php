@@ -1,7 +1,7 @@
 <?php
 
 # Template Name: Photography
- $args=array(
+$args=array(
 	'posts_per_page' => -1, 
     'post_type'      => 'photograph',
     'category'       => 'featured-image',
@@ -11,7 +11,7 @@
 $wp_query = new WP_Query( $args );
 $wp_count = count($wp_query);
 $wp_count % 2 != 0 ? array_pop($wp_query)  : "";
-
+$posts = $wp_query->posts;
 wp_reset_query();
 
 
