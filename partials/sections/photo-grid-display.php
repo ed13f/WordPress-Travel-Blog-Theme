@@ -8,16 +8,9 @@ $height_staddered_array = [10, 40, 20, 35, 5, 30];
 // $height_staddered_array = [ 5,10, 20, 30, 35, 40];
 $count = $left_image_count = 0;
 
-$args=array(
-	'posts_per_page' => -1, 
-    'post_type'      => 'photograph',
-    'category'       => 'featured-image',
-    '_shuffle_and_pick'     =>  -1,
-);
-
-$wp_query = new WP_Query( $args );
 $wp_count = count($wp_query);
-$wp_count % 2 != 0 ? array_pop($wp_query)  : "";
+// $wp_count % 2 != 0 ? array_pop($wp_query)  : "";
+$posts = $wp_query->posts;
 wp_reset_query();
 
 ?>
@@ -25,25 +18,18 @@ wp_reset_query();
 <section class="photo-grid-display continent-group-wrapper">
 	<?php partial('widgets.destination-scroll-arrows'); ?>
 	<div class="grid-wrapper continent-group-container">
-		<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
-			
-
-			?>
-			<div class="image-gallery-image<?php echo( in_array($left_image_count, [0,1,2]) ? ' left-column' : ''); ?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>); height:<?php echo $num_array[$count]; ?>px; margin-top:<?php echo is_float( $count / 3 ) ? '' : $height_staddered_array[$count]; ?>px; " name="id<?php echo strval(get_the_id());?>">
+		<?php foreach($posts as $post){ ?>
+			<div class="image-gallery-image<?php echo( in_array($left_image_count, [0,1,2]) ? ' left-column' : ''); ?>" style="background-image:url(<?php  echo get_the_post_thumbnail_url($post->ID); ?>); height:<?php echo $num_array[$count]; ?>px; margin-top:<?php echo is_float( $count / 3 ) ? '' : $height_staddered_array[$count]; ?>px; " name="id<?php echo strval($post->ID);?>">
 				<div class="content-container">
-					<h2 class="individual-photography-header"><?php the_title(); ?></h2>
+					<h2 class="individual-photography-header"><?php echo get_the_title($post->ID); ?></h2>
 					<div class="view-photo">View</div>
 				</div>
 				<div class="image-screen">
-					
-
-
-
 				</div>
 			</div>
 			<?php  $count += 1;
 			$left_image_count += 1; 
 			$count == 6 ? $count = 0 : ""; ?>
-		<?php endwhile; endif; ?>
+		<?php } ?>
 	</div>
 </section>
