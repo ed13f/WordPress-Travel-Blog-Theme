@@ -3,20 +3,8 @@ article.continent-group{
 	.max-width();
 	width:100vw;
 	padding:0 2%;
-	// margin:40px auto;
 	&.flip{
 		flex-direction: row-reverse;
-		// & .destination-content{
-		// 	padding-left: 4%;
-		// 	padding-right:0 !important;
-		// }
-		// & h2{
-		// 	padding-left: 4%;
-		// 	padding-right: 0% !important;
-		// }
-		// & .continent-group-wrapper{
-		// 	padding-left: 4%;
-		// }
 	}	
 	& .continent-group-content{
 		flex:2;
@@ -41,27 +29,24 @@ article.continent-group{
 		overflow: -moz-scrollbars-none;
 		overflow-x: hidden;
 		overflow-y: overlay;
+		height:350px;
 		& ::-webkit-scrollbar { 
 		    display: none; 
 		    height:0px;
 		}
-		& .continent-group-wrapper{
-			padding-right:2%;
-			position:relative;
-			& .scroll-shadow{
-				position:relative;
-				width:100%;
-			}
 			& .continent-group-container{
-				height: 350px;
-				text-align:center;
-				overflow: scroll;
+				height: 100%;
+				// text-align:center;
+				// overflow: scroll;
+				width: 57vw;
+				max-width:645px;
+				overflow: hidden;
 				overflow-y: hidden;
 				white-space: nowrap;
 				position:relative;
 			}	
 
-		}
+		// }
 	}	
 
 }

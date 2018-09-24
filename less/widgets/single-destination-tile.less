@@ -1,27 +1,28 @@
 .destination-tile{
 	position:relative;
 	background-size: cover;
+	display:inline-block;
 	background-repeat: no-repeat;
-	// height:350px;
-	// height:250px;
 	height:100%;
+	// display:none;
+	// position: absolute;
 	&.region-widget-wrapper{
-		// position:relative;
-		// height:250px;
 		text-align:center;
 		margin:0 3% 0 0;
 		width: 32%;
-		// background-size: cover;
 	}
 
 
 	&.continent-group-tile{
-		display:inline-block;
-		// width:300px;
-		width:57vw;
-		max-width:645px;
+		// display:none;
+		// display:inline-block;
+		// width:57vw;
+		width:100%;
+		margin-right:-4px;
+		margin-left: 10px;
+		// max-width:645px;
 		overflow:scroll;
-		margin:0 10px;
+		// margin:0 10px;
 	}
 	a.link-screen{
 		z-index: 1;
@@ -38,8 +39,9 @@
 		}
 	}
 	& h3.tile-title{
-		margin-top:70px;
+		margin-top:21%;
 		z-index:3;
+		text-align:center;
 		position:relative;
 		color:@color-6;
 		&.active-title{
@@ -61,8 +63,80 @@
 	}
 	&.first{
 		margin-left: 0;
+		// add
+		display: inline-block;
 	}
 	&.last{
 		margin-right:0;
 	}
 }
+
+
+// .destination-tile{
+// 	position:relative;
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+// 	// height:350px;
+// 	// height:250px;
+// 	height:100%;
+// 	&.region-widget-wrapper{
+// 		// position:relative;
+// 		// height:250px;
+// 		text-align:center;
+// 		margin:0 3% 0 0;
+// 		width: 32%;
+// 		// background-size: cover;
+// 	}
+
+
+// 	&.continent-group-tile{
+// 		display:inline-block;
+// 		// width:300px;
+// 		width:57vw;
+// 		max-width:645px;
+// 		overflow:scroll;
+// 		margin:0 10px;
+// 	}
+// 	a.link-screen{
+// 		z-index: 1;
+// 	    position: absolute;
+// 	    height: 100%;
+// 	    width: 100%;
+// 	    left: 0;
+// 	    top:0;
+// 	    background-color:@color-7;
+// 	    opacity:0.4;
+// 	    &.active-fade-in{
+// 			opacity:0;
+// 			z-index: 4;
+// 		}
+// 	}
+// 	& h3.tile-title{
+// 		margin-top:70px;
+// 		z-index:3;
+// 		position:relative;
+// 		color:@color-6;
+// 		&.active-title{
+// 			opacity:0.25;
+// 		}
+// 	}
+
+// 	& .date{
+// 		position: absolute;
+// 	    color: black;
+// 	    font-size: 20px;
+// 	    line-height: 20px;
+// 	    top: 0;
+// 	    left: 0;
+// 	    z-index:3;
+// 	    background-color: lightgrey;
+// 	    padding: 12px;
+// 	    opacity: .7;
+// 	}
+// 	&.first{
+// 		margin-left: 0;
+// 	}
+// 	&.last{
+// 		margin-right:0;
+// 	}
+// }
