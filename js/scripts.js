@@ -74,6 +74,7 @@ $(document).ready(function(){
 
 	// slider arrow click rotation
 	$(".slider-arrow").on( "click", function() {
+		// debugger
 		var arrow = $(this);
   		if(arrow.hasClass("right-arrow")){
   			clickChangeSlider(arrow)
@@ -104,6 +105,16 @@ $(document).ready(function(){
 	}
 
 	// ================================[Scroll Arrow Destinations Page]=======================================
+
+	// homepage scroll show
+	$(".scroll-arrow-homepage > .scroll-arrow").hover(function(){
+		console.log("hover home")
+		$(this).animate({opacity: 1}, 1000)
+	},function(){
+		$(this).animate({opacity: 0}, 1000)
+	})
+
+
 	// hover display arrows
 	$(".scroll-arrow").hover(function(){
 		$(this).closest(".continent-group-slider-container").addClass("scroll-shadow", 300);
@@ -128,6 +139,7 @@ $(document).ready(function(){
 
 
 	$(".scroll-arrow").on('click', function(){
+		console.log("This one");
 		var arrowContainer = $(this).closest($('.destination-scroll-arrows'));
 		var rightArrow = arrowContainer.find(".right-arrow");
 		var leftArrow = arrowContainer.find(".left-arrow");
@@ -139,16 +151,17 @@ $(document).ready(function(){
 		var sliderContainer = arrowContainer.siblings(".continent-group-container");
 		var activeTile = sliderContainer.find('.active-destination');
 		var siblings = activeTile.siblings();
-		var destinationContainer = arrowContainer.siblings('.continent-group-container');
+		var sliderContainer = arrowContainer.siblings(".continent-group-container");
+		// debugger
 		var screenWidth = $(".destination-tile").width();
-		var tileCount = destinationContainer.find(".destination-tile").length - 2;
+		var tileCount = sliderContainer.find(".destination-tile").length - 2;
 		var containerLength = tileCount * screenWidth;
-		var leftPos = destinationContainer.scrollLeft();
+		var leftPos = sliderContainer.scrollLeft();
 		var isArrowLeft = $(this).hasClass("left-arrow");
 		if(isArrowLeft){
-			destinationContainer.animate({scrollLeft: leftPos - screenWidth - 10}, 1000);	
+			sliderContainer.animate({scrollLeft: leftPos - screenWidth - 10}, 1000);	
 		} else{
-			destinationContainer.animate({scrollLeft: leftPos + screenWidth + 10}, 1000);
+			sliderContainer.animate({scrollLeft: leftPos + screenWidth + 10}, 1000);
 	  	}
 	  	if(leftPos <= screenWidth + 20 && isArrowLeft){ leftArrow.addClass("slideArrowEnd"); }
 		if(leftPos >= containerLength - 20 && !isArrowLeft){ rightArrow.addClass("slideArrowEnd"); }
@@ -258,13 +271,8 @@ $(document).ready(function(){
 
 
 		var elementList = selectSliderElements("image")
-		// debugger
 		fadeOutImage("image", elementList)
 		selectFadeInImage("image", elementList, selector)
-		// debugger
-
-		// activeHero.hide().removeClass("active-img");
-		// heroCounterPart.show().addClass("active-img");
 
 		$('html, body').animate({
 		    scrollTop: $("body").offset().top
@@ -276,6 +284,8 @@ $(document).ready(function(){
 
 		console.log(activeHero)
 	})
+
+	// featured Image Slider Scroll Arrows
 
 
 	// nav stick
