@@ -1,6 +1,12 @@
 <?php
 # Template Name: Home
 
+$id = get_the_ID();
+$post = get_post($id);
+$main_content = $post->post_content;
+$feature_img_id = get_post_thumbnail_id( $id );
+$main_content = apply_filters('the_content', $main_content);
+$lower_content = get_field('lower_content', $id);
 $args=array(
 	'posts_per_page' => 3, 
 	'orderby' => 'publish_date',
@@ -13,12 +19,9 @@ $feat_img_args=array(
     'post_type'      => 'photograph',
     'category'       => 'featured-image',
     '_shuffle_and_pick'     => 10,
+    'post__not_in' => array($feature_img_id),
 );
-$id = get_the_ID();
-$post = get_post($id);
-$main_content = $post->post_content;
-$main_content = apply_filters('the_content', $main_content);
-$lower_content = get_field('lower_content', $id);
+
 
 the_post();
 get_header();
