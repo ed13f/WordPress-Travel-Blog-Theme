@@ -1,23 +1,45 @@
 div.hero-content-wrapper{
 	position: absolute;
-    height: 60vh;	
+    height: 50vh;
+    &.general-content p{
+	    @media (max-width: 600px) {display:none;} 
+	}
+    & div.hero-short-screen{
+		height: 15vh;
+	    width: 100%;
+	    position: absolute;
+	    z-index: 1;
+	    pointer-events: none;
+	    // background: linear-gradient( rgba(4,55,97,0.8), rgba(4,55,97,0));
+	    // background: linear-gradient(#043761, rgba(4,55,97,0.8), rgba(4,55,97,0.6), rgba(4,55,97,0.4), rgba(4,55,97,0.2), rgba(4,55,97,0));
+	    // background: linear-gradient(#D9B44A, rgba(217,180,74,0.95), rgba(217,180,74,0.85), rgba(217,180,74,0.7), rgba(217,180,74,0.4), rgba(217,180,74,0.1), rgba(217,180,74,0));
+		// background:linear-gradient(#d9b44a, rgba(217,180,74,0.8), rgba(217,180,74,0.6), rgba(217,180,74,0.4), rgba(217,180,74,0.2), rgba(217,180,74,0.1), rgba(217,180,74,0));
+		// background:linear-gradient(@color-7, rgba(6,74,82,0.9), rgba(6,74,82,0.7), rgba(6,74,82,0.5), rgba(6,74,82,0.2), rgba(6,74,82,0.1), rgba(6,74,82,0));
+	}		
 	div.hero-content{
 		height: 0;
 	    position: sticky;
 	    top:20%;
+	    z-index:2;
 	    width:100vw;
 	    padding: 0 15vw 50px;
+	    
+	    @media (max-width: 950px) { 
+	    	padding: 0 5vw 50px;
+	    	position: relative;
+	    }
 		& h1{
 	    	position:sticky;
 	    	z-index:5;
 	    	// left: 10vw;
 	    	top: 30%;
+	    	font-size:50px;
 	    	// width: initial;
 	    	color:#ffffff;
 	    	text-shadow: 0px 0px 30px @color-7;
 
 
-	    	max-width: 1140px;
+	    	max-width: @wrapper;
 		    /* text-align: center; */
 		    width: 100%;
 		    margin: 0 auto;
@@ -27,16 +49,17 @@ div.hero-content-wrapper{
 	    	z-index:5;
 	    	left: 10vw;
 	    	top: 43%;
-	    	font-size:30px;
-	    	line-height:35px;
+	    	font-size:27px !important;
+	    	line-height:35px !important;
 	    	width: 80vw;
 	    	color:#ffffff;
 	    	text-shadow: 0px 0px 30px @color-7;
-	    	max-width: 1140px;
+	    	max-width: @wrapper;
 	    	padding-top: 50px;
 		    /* text-align: center; */
 		    width: 100%;
 		    margin: 0 auto;
-	    } 	
+		    
+	    } 
 	}
 }	

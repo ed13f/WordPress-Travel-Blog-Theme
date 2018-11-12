@@ -10,7 +10,6 @@ $image_count = count($posts);
 
 <article class="featured-image-slider-container">
 		<?php foreach($posts as $post){ ?>
-			<!-- <?php var_dump(get_the_post_thumbnail_url($post->ID)); ?> -->
 			<div class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " style="background-image:url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')" name="id<?php echo strval($post->ID);?>">
 				<div class="photo-location-wrapper">
 					<div class="photo-location"><em><?php echo get_the_title($post->ID); ?></em></div>
@@ -19,10 +18,11 @@ $image_count = count($posts);
 			<?php $counter +=1; ?>
 			</div>
 		<?php } ?>
-				
-	<div class="slider-tracking-container">
+	<?php if($image_count != 1){ ?>		
+	<div class="<?php echo $dot_class; ?>">
 		<?php for ($x = 1; $x <= $image_count; $x++) { ?>
    			 <span class="slider-dot <?php echo $x == 1 ? 'active-dot' :''; ?>">&#x25A0;</span>
 		<?php } ?>
 	</div>	
+<?php } ?>
 </article>	

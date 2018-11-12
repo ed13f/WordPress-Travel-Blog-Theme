@@ -1,5 +1,8 @@
 article.continent-group{
 	display:flex;
+	@media (max-width: 600px) { 
+		flex-direction: column !important; 
+		padding: 0 0%;}
 	.max-width();
 	width:100vw;
 	padding:0 2%;
@@ -29,7 +32,8 @@ article.continent-group{
 		overflow: -moz-scrollbars-none;
 		overflow-x: hidden;
 		overflow-y: overlay;
-		height:350px;
+		height:400px;
+		@media (max-width: 600px) { width: 100vw; }
 		& ::-webkit-scrollbar { 
 		    display: none; 
 		    height:0px;
@@ -39,11 +43,15 @@ article.continent-group{
 				// text-align:center;
 				// overflow: scroll;
 				width: 57vw;
-				max-width:645px;
+				max-width:770px;
 				overflow: hidden;
 				overflow-y: hidden;
-				white-space: nowrap;
+				// white-space: nowrap;
 				position:relative;
+				@media (max-width: 600px) { 
+					width: 96vw;
+					margin:0 auto;
+				 }
 			}	
 
 		// }

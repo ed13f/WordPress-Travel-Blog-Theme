@@ -1,4 +1,5 @@
 <?php
+$content_class = "hero-content-wrapper map-content"; 
 
 $args=array(
   'posts_per_page' => -1, 
@@ -29,10 +30,10 @@ $wpQueryJson = json_encode($modified_post_objects_list);
 
   <section class="map-section">
     <div class="hero-content-screen">
-      <?php partial('widgets.hero-content'); ?>
+      <?php partial('widgets.hero-content', ['content_class' => $content_class]); ?>
 
     </div>
-    <div class="hero-short-screen"></div>
+    
     <div class="map-screen"></div> 
     <div id="map"></div>
   </section>  
@@ -382,7 +383,9 @@ $wpQueryJson = json_encode($modified_post_objects_list);
               scaledSize: new google.maps.Size(5, 1), // scaled size
               url: url,
             });
-            var infoWindow = new google.maps.InfoWindow(), marker, i;
+            var infoWindow = new google.maps.InfoWindow({
+              pixelOffset: new google.maps.Size(0,30)
+            }), marker, i;
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
 
@@ -390,9 +393,13 @@ $wpQueryJson = json_encode($modified_post_objects_list);
                       "<a class='info-window-link' href=" + this.url + ">" + 
                         "<div class='info-box-wrapper'>" + 
                           "<div class='info-box-screen'></div>" +
-                        '<div class="info-box-container" style="background-image:url(' + this.imgUrl + ');">' + 
-                          "<h3>" + this.title + "</h3>" +
+                          '<div class="info-box-container" style="background-image:url(' + this.imgUrl + ');">' + 
+                            "<h3>" + this.title + "</h3>" +
                          '</div>' + 
+                        '</div>' +
+                        "<div >" +
+                        "<img style='width:20%; height:20px; margin-right: -25px;' src='http://localhost/travel_blog/wp-content/uploads/2018/11/Black_triangle.png'/>" +
+
                         '</div>' +
                       "</a>"
 

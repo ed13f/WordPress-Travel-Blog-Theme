@@ -1,6 +1,11 @@
 header.destination-hero{
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
+    margin-top: 60px;
+    @media (max-width: 600px) { 
+    	margin-top: 0;
+    	height: 33vh; 
+    }
     background-size: cover;
 	& .hero-screen{
 		width:100%;
@@ -9,7 +14,7 @@ header.destination-hero{
 		// opacity:0.25;
 		// background: linear-gradient(#043761, rgba(4,55,97,0.7), rgba(4,55,97,0.5), rgba(4,55,97,0.3), rgba(4,55,97,0.2));
 		// background: linear-gradient(#D9B44A, rgba(217,180,74,0.8), rgba(217,180,74,0.6), rgba(217,180,74,0.4), rgba(217,180,74,0.2), rgba(217,180,74,0));
-		background: linear-gradient(@color-7, rgba(6,74,82,0.8), rgba(6,74,82,0.6), rgba(6,74,82,0.4), rgba(6,74,82,0.2), rgba(6,74,82,0));
+		background: linear-gradient(@color-7, rgba(6,74,82,1),  rgba(6,74,82,0.85), rgba(6,74,82,0.5), rgba(6,74,82,0.3), rgba(6,74,82,0.1), rgba(6,74,82,0));
 		// background-color:rgba(112, 112, 112, 0.15);
 	}
 	
