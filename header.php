@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html style="margin-top:0 !important;" <?php language_attributes(); echo $html_classes; ?>>
 	<head>

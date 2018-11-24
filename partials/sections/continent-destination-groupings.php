@@ -38,9 +38,9 @@ $south_america_class = "destination-page";
 
 
 <section class="continent-destination-groupings">
-	<?php partial('widgets.continent-group', ['query' => $wp_europe_query, 'continent_name' => "Europe", "class_to_add" => $europe_class]); ?>
-	<?php partial('widgets.continent-group', ['query' => $wp_north_america_query, 'continent_name' => "North America", "class_to_add" => $north_america_class]); ?>
-	<?php partial('widgets.continent-group', ['query' => $wp_south_america_query, 'continent_name' => "South America", "class_to_add" => $south_america_class]); ?>
+	<?php partial('widgets.continent-group', ['query' => $wp_europe_query, 'continent_name' => "Europe", "class_to_add" => $europe_class, 'preview_word_count'=> $preview_word_count]); ?>
+	<?php partial('widgets.continent-group', ['query' => $wp_north_america_query, 'continent_name' => "North America", "class_to_add" => $north_america_class, 'preview_word_count'=> $preview_word_count]); ?>
+	<?php partial('widgets.continent-group', ['query' => $wp_south_america_query, 'continent_name' => "South America", "class_to_add" => $south_america_class, 'preview_word_count'=> $preview_word_count]); ?>
 	
 
 

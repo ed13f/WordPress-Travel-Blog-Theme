@@ -1,4 +1,4 @@
-article.continent-group{
+section.continent-group{
 	display:flex;
 	@media (max-width: 600px) { 
 		flex-direction: column !important; 
@@ -12,13 +12,13 @@ article.continent-group{
 	& .continent-group-content{
 		flex:2;
 		.continent-group-content-container{
-			padding: 50px 3vw 30px;
+			padding: 40px 3vw 40px;
 			& h2{
 				text-align:center;
 				padding-right: 2%;
 			}
 			& .destination-content{
-				max-height: 165px;
+				max-height: 195px;
 	    		overflow: hidden;
 	    		padding-right: 2%;
 			}
@@ -40,21 +40,17 @@ article.continent-group{
 		}
 			& .continent-group-container{
 				height: 100%;
-				// text-align:center;
-				// overflow: scroll;
 				width: 57vw;
 				max-width:770px;
 				overflow: hidden;
 				overflow-y: hidden;
-				// white-space: nowrap;
+				white-space: nowrap;
 				position:relative;
 				@media (max-width: 600px) { 
 					width: 96vw;
 					margin:0 auto;
 				 }
 			}	
-
-		// }
 	}	
 
 }

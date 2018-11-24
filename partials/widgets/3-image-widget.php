@@ -22,7 +22,7 @@ if($tile_count == 1){
 	$class .= ' tile-' .  strval($post_counter);
 ?>
 
-<?php partial('widgets.single-destination-tile', ['class' => $class]); ?>
+<?php partial('widgets.single-destination-tile', ['class' => $class, 'preview_word_count'=> $preview_word_count]); ?>
 <?php $post_counter += 1;
 $class .= "region-widget-wrapper destination-tile";
 ?>

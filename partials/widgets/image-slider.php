@@ -8,15 +8,17 @@ $image_count = count($posts);
 ?>
 
 
-<article class="featured-image-slider-container">
+<section class="<?php echo $container_class; ?>">
+	<?php if($image_count != 1 || $arrow_class == true){ partial('widgets.destination-scroll-arrows', ['arrow_class' => $arrow_class, "slide_arrow" => $slide_arrow]); } ?>
 		<?php foreach($posts as $post){ ?>
-			<div class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " style="background-image:url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')" name="id<?php echo strval($post->ID);?>">
+			<article class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " name="id<?php echo strval($post->ID);?>">
+				<?php  echo get_the_post_thumbnail($post->ID); ?>
 				<div class="photo-location-wrapper">
-					<div class="photo-location"><em><?php echo get_the_title($post->ID); ?></em></div>
-					<div class="photo-subtext"><?php echo get_the_content($post->ID); ?></div>
+					<h3 class="photo-location"><em><?php echo get_the_title($post->ID); ?></em></h3>
+					<p class="photo-subtext"><?php echo the_post_thumbnail_caption($post->ID); ?></p>
 				</div>
 			<?php $counter +=1; ?>
-			</div>
+			</article>
 		<?php } ?>
 	<?php if($image_count != 1){ ?>		
 	<div class="<?php echo $dot_class; ?>">
@@ -25,4 +27,4 @@ $image_count = count($posts);
 		<?php } ?>
 	</div>	
 <?php } ?>
-</article>	
+</section>	
