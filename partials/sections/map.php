@@ -21,14 +21,15 @@ foreach ($posts as $post) {
   $modified_post_objects['long'] = get_field('longitude', $post->ID);
   $modified_post_objects['url'] = get_permalink($post->ID);
   $modified_post_objects['img_url'] = get_the_post_thumbnail_url($post->ID);
+  $modified_post_objects['preview_text'] = wp_trim_words( get_field('preview_text', $post->ID), $num_words = 5, $more = null );
   array_push($modified_post_objects_list, $modified_post_objects);    
 }
 $wpQueryJson = json_encode($modified_post_objects_list);
 
-
 ?>
 
-  <section class="map-section">
+  <header class="map-section">
+    <?php partial('nav.main-nav'); ?>
     <div class="hero-content-screen">
       <?php partial('widgets.hero-content', ['content_class' => $content_class]); ?>
 
@@ -36,9 +37,10 @@ $wpQueryJson = json_encode($modified_post_objects_list);
     
     <div class="map-screen"></div> 
     <div id="map"></div>
-  </section>  
+  </header>  
     <script>
       var jsonMapArray = <?php echo $wpQueryJson; ?>;
+      // debugger
       google.maps.event.trigger(map, 'resize');
 
 
@@ -365,13 +367,18 @@ $wpQueryJson = json_encode($modified_post_objects_list);
             var title = jsonMapArray[i]['title'];
             var imgUrl = jsonMapArray[i]['img_url'];
             var url = jsonMapArray[i]['url'];
+            var previewText = jsonMapArray[i]['preview_text']
+
                               
             var icon = {
-                url: 'http://ricodesantis.com/images/travel_blog/Red_Pin_Emoji.png',
+                // url: 'http://ricodesantis.com/images/travel_blog/Red_Pin_Emoji.png',
 
-                scaledSize: new google.maps.Size(30, 30),
+                url: 'http://localhost/travel_blog/wp-content/uploads/2018/11/kisspng-computer-icons-desktop-wallpaper-map-map-marker-5ad714f2688af9.7464394615240450424282.png',
+                
+
+                scaledSize: new google.maps.Size(40, 40),
                 origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(15, 27),
+                anchor: new google.maps.Point(21, 37),
             };
             var latLng = new google.maps.LatLng(lat, long);
             var marker = new google.maps.Marker({
@@ -382,19 +389,21 @@ $wpQueryJson = json_encode($modified_post_objects_list);
               imgUrl: imgUrl,
               scaledSize: new google.maps.Size(5, 1), // scaled size
               url: url,
+              previewText: previewText,
             });
             var infoWindow = new google.maps.InfoWindow({
               pixelOffset: new google.maps.Size(0,30)
             }), marker, i;
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
-
+                  
                     infoWindow.setContent( 
                       "<a class='info-window-link' href=" + this.url + ">" + 
                         "<div class='info-box-wrapper'>" + 
                           "<div class='info-box-screen'></div>" +
                           '<div class="info-box-container" style="background-image:url(' + this.imgUrl + ');">' + 
                             "<h3>" + this.title + "</h3>" +
+                            "<p>" + this.previewText + " <button class='view-tile'>&rarr;</button></p>" + 
                          '</div>' + 
                         '</div>' +
                         "<div >" +

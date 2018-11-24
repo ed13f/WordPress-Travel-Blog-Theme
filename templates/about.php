@@ -11,7 +11,6 @@ $main_content = apply_filters('the_content', $main_content);
 
 the_post();
 get_header();
-partial('nav.main-nav');
 partial('heros.destination-hero', ['hero_image_url' => $hero_image_url]);
 partial('sections.content', ['content'=> $main_content]);
 partial('sections.image-table-stacked');

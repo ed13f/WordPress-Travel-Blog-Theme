@@ -17,7 +17,7 @@ wp_reset_query();
 
 the_post();
 get_header();
-partial('nav.main-nav');
+
 partial('heros.photography', ["wp_query"=> $wp_query]);
 partial('sections.photo-grid-display', ["wp_query"=> $wp_query]);
 get_footer();

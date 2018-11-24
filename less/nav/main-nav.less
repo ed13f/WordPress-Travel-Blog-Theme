@@ -1,71 +1,86 @@
 @media (min-width: 600px) {
-	div.main-menu-class{
-		// position:relative;
-		position:fixed;
-		z-index:6;
-		// height:100px;
-		background-color: @color-7;
-		height: 100px;
-		ul.menu, ul.menu-main-menu{
-			.display-flex();
-			.flex-align-content-space-between();
-			position:absolute;
-			z-index:10;
-			width:100vw;
-			height: 120px;
-			// position:sticky;
-			top:0px;
-			padding:0 13vw;
-			font-size:22px;
+	nav{
+		position:relative;
+		z-index: 20;
+		height: 0;
+		div.main-menu-class{
+			// position:relative;
+			position:fixed;
+			z-index:6;
+			// height:100px;
 			background-color: @color-7;
-			-webkit-transition: height 0.5s; /* Safari */
-	    	transition: height 0.5s;
-	    	@media (max-width: 950px) { padding:0; }
-			&.nav-img-resive{
-				height:60px;
+			height: 100px;
+			ul.menu, ul.menu-main-menu{
+				.display-flex();
+				.flex-align-content-space-between();
+				position:absolute;
+				z-index:10;
+				width:100vw;
+				height: 120px;
+				// position:sticky;
+				top:0px;
+				padding:0 13vw;
+				font-size:22px;
+				background-color: @color-7;
 				-webkit-transition: height 0.5s; /* Safari */
-	    		transition: height 0.5s;
-				& img{
-					width:50px;
-					// margin-top:0px;
-					-webkit-transition: width 0.5s; /* Safari */
-					transition: width 0.5s;
+		    	transition: height 0.5s;
+		    	@media (max-width: 950px) { padding:0; }
+				&.nav-img-resive{
+					height:60px;
+					-webkit-transition: height 0.5s; /* Safari */
+		    		transition: height 0.5s;
+					& img{
+						width:50px;
+						// margin-top:0px;
+						-webkit-transition: width 0.5s; /* Safari */
+						transition: width 0.5s;
+					}
+					& li:not(#menu-item-114){
+						padding-top:10px;
+						-webkit-transition: padding-top 0.5s; /* Safari */
+		    			transition: padding-top 0.5s;
+					}
+					& li#menu-item-114{
+						padding-top:27px;
+						-webkit-transition: padding-top 0.5s; /* Safari */
+		    			transition: padding-top 0.5s;
+					}
 				}
-				& li:not(#menu-item-114){
-					padding-top:10px;
+				&.sticky-nav{
+					position:fixed;
+					top:0;
+					margin-top:0;
+				}
+				& li{
+					// position:relative;
+					text-align:center;
+					width:20%;
+					padding-top:40px;
 					-webkit-transition: padding-top 0.5s; /* Safari */
-	    			transition: padding-top 0.5s;
+		    		transition: padding-top 0.5s;
+					// top: 40px;
+		    		// height: 4vh;
+					.flex(1, 1, 1);
+					&.current_page_item{
+						;
+						& a{
+							color:@cta-color
+						}
+					}
+					& a{
+						color:#ffffff;
+						font-weight:bold;
+						&:hover{
+							color:@cta-color
+						}
+					}
+					img{
+						width:100px;
+						margin-top:-30px;
+						-webkit-transition: width 0.5s; /* Safari */
+		    			transition: width 0.5s;
+					}	
 				}
-				& li#menu-item-114{
-					padding-top:27px;
-					-webkit-transition: padding-top 0.5s; /* Safari */
-	    			transition: padding-top 0.5s;
-				}
-			}
-			&.sticky-nav{
-				position:fixed;
-				top:0;
-				margin-top:0;
-			}
-			& li{
-				// position:relative;
-				text-align:center;
-				width:20%;
-				padding-top:40px;
-				-webkit-transition: padding-top 0.5s; /* Safari */
-	    		transition: padding-top 0.5s;
-				// top: 40px;
-	    		// height: 4vh;
-				.flex(1, 1, 1);
-				& a{
-					color:#ffffff;
-				}
-				img{
-					width:100px;
-					margin-top:-30px;
-					-webkit-transition: width 0.5s; /* Safari */
-	    			transition: width 0.5s;
-				}	
 			}
 		}
 	}
@@ -73,7 +88,7 @@
 		display:none;
 	}
 }
-@media (max-width: 600px ) {
+@media (max-width: 600px ), screen and (max-width: 830px ) and (orientation: landscape) {
 	nav{
 		background-color:@color-7;
 		div.main-menu-class{
@@ -92,7 +107,6 @@
 			    padding-top:50px;
 			    background-color: @color-7;
 			    padding:20vh 0;
-			    
 			    &.active-nav-menu{
 			    	right:0px;
 			    	-webkit-transition: right 0.5s; /* Safari */
@@ -100,6 +114,7 @@
 			    }
 				& li#menu-item-114{
 					position: fixed;
+					width: 76px;
 					background-color: @color-7;
 	    			right: 0;
 	    			top: 0;
@@ -123,7 +138,7 @@
 				}
 			}
 		}
-		div.mobile-menu-button{
+		.mobile-menu-button{
 			position: fixed;
 		    display: initial;
 		    padding: 32px 38px;
@@ -132,6 +147,7 @@
 		    z-index: 6;
 		    background-color: @color-7;
 		    color:white;
+		    border: none;
 		    & .mobile-menu-line{
 	    		background-color: white;
 	    		position:absolute;

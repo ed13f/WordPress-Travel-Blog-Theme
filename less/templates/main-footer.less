@@ -1,5 +1,5 @@
 footer{
-	background-color:grey;
+	background-color:@color-7;
 	margin-top:50px;
 	section.main-footer{
 		max-width: @wrapper;
@@ -11,10 +11,17 @@ footer{
 	    	position:absolute;
 	    	right:0;
 	    	bottom: 20px;
+
 	    	& h3{
 	    		font-size: 12px;
+	    		color:#ffffff;
 	    		& .footer-link{
+	    			color:#ffffff;
 	    			text-decoration:underline;
+	    			&:hover{
+	    				color:@cta-color;
+	    			}
+	    			
 	    		}
 	    	}
 	    }
@@ -33,6 +40,9 @@ footer{
 
 			 & img{
 				width:40px;
+				&:hover{
+					background-color:@cta-color;
+				}
 			}
 
 		}

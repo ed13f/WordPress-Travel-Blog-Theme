@@ -125,22 +125,43 @@ $(document).ready(function(){
 	// ================================[Scroll Arrow Destinations Page]=======================================
 
 	// homepage scroll show
-	$(".scroll-arrow-homepage > .scroll-arrow").hover(function(){
-		console.log("hover home")
-		$(this).animate({opacity: 1}, 300)
+	$(".scroll-arrow-homepage .scroll-arrow").hover(function(){
+		console.log("hover home");
+		var arrow = $(this);
+		if(arrow.hasClass("active-animation")){return}
+		arrow.addClass("active-animation");
+		arrow.animate({
+		    opacity: 0.5
+		  }, 300, function() {
+		    arrow.addClass("active-animation");
+		    arrow.removeClass("skipped");
+		  });
 	},function(){
-		$(this).animate({opacity: 0}, 300)
+		var arrow = $(this)
+		arrow.animate({
+		    opacity: 0
+		  }, 300, function() {
+		    // Animation complete.
+		    arrow.removeClass("active-animation");
+		  });
 	})
 
 
 	// hover display arrows
 	$(".scroll-arrow").hover(function(){
+		console.log("rereereer")
 		$(this).closest(".continent-group-slider-container").addClass("scroll-shadow", 300);
 
 		var arrowContainer = $(this).closest($('.destination-scroll-arrows'));
 		var isArrowLeft = $(this).hasClass("left-arrow");
 		// $(this).closest(".destination-scroll-arrows").siblings(".continent-group-container").find(".link-screen").hide();
 		// $(this).closest(".link-screen").addClass("active-fade-in");
+		$(this).animate({
+		    opacity: 0.7
+		  }, 300, function() {
+		    // arrow.addClass("active-animation");
+		    // arrow.removeClass("skipped");
+		  });
 		if(isArrowLeft){
 			$(this).addClass("slide-left");
 		} else{
@@ -149,10 +170,17 @@ $(document).ready(function(){
 	  	}
 	},
 	function(){
+		$(this).animate({
+		    opacity: 0
+		}, 300, function() {
+		    // Animation complete.
+		    // arrow.removeClass("active-animation");
+		});
 		$(this).removeClass("slide-right");
 		$(this).removeClass("slide-left");
 		// $(".link-screen").css("display", "inline-block");
 	})
+
 
 
 
@@ -199,23 +227,26 @@ $(document).ready(function(){
 
 
 	//container hover show arrows
-	$('.continent-group-slider-container').hover(function(){
-		var arrowsContainer = $(this).find(".destination-scroll-arrows");
-		arrowsContainer.addClass("hover");
-		arrowsContainer.fadeIn(300, function(){
-		arrowsContainer.removeClass("hover");
-		});
-	},
-	function(){
-		var arrowsContainer = $(this).find(".destination-scroll-arrows");
-		arrowsContainer.addClass("hover");
-		arrowsContainer.fadeOut(300, function(){
-			arrowsContainer.removeClass("hover");
-		});
-	})
+	// $('.continent-group-slider-container').hover(function(){
+	// 	console.log("yeeeeeeee")
+	// 	console.log("rico")
+	// 	var arrowsContainer = $(this).find(".destination-scroll-arrows");
+	// 	arrowsContainer.addClass("hover");
+	// 	arrowsContainer.fadeIn(300, function(){
+	// 	arrowsContainer.removeClass("hover");
+	// 	});
+	// },
+	// function(){
+	// 	var arrowsContainer = $(this).find(".destination-scroll-arrows");
+	// 	arrowsContainer.addClass("hover");
+	// 	arrowsContainer.fadeOut(300, function(){
+	// 		arrowsContainer.removeClass("hover");
+	// 	});
+	// })
 
 	// destination tile hover hide date
 	$(".region-widget-wrapper.destination-tile, .continent-group-slider-container").hover(function(){
+		console.log("leggggooo")
 		var tile = $(this)
 		
 		if(tile.hasClass("active-animation")){return}
@@ -223,7 +254,7 @@ $(document).ready(function(){
 		// debugger
 		var tile = $(this)
 		console.log("Hover Tile")
-		tile.find(".view-tile").animate({
+		tile.find(".tile-content p").animate({
 		    opacity: 1
 		  }, 300, function() {
 		    tile.addClass("active-animation");
@@ -231,7 +262,7 @@ $(document).ready(function(){
 	},
 	function(){
 		var tile = $(this)
-		tile.find(".view-tile").animate({
+		tile.find(".tile-content p").animate({
 		    opacity: 0
 		  }, 300, function() {
 		    // Animation complete.
@@ -261,6 +292,7 @@ $(document).ready(function(){
 
 
 	$(".image-gallery-image").hover(function(){
+
 		var tile = $(this)
 		if(tile.hasClass("active-animation")){return}
 		tile.addClass("active-animation");
@@ -282,9 +314,25 @@ $(document).ready(function(){
 
 
 	$(".image-display-arrows .scroll-arrow").hover(function(){
-		var destinationContainer = $(this).closest($('.destination-scroll-arrows')).siblings('.continent-group-container');
+		// var destinationArrows = $(".image-display-arrows .scroll-arrow").closest($('.destination-scroll-arrows').siblings('.continent-group-container'));
+
+
+		var destinationArrows = $(this).closest($('.destination-scroll-arrows'));
+		var destinationContainer = destinationArrows.siblings('.grid-wrapper');
+
+
+		//can remove
+		// var rightArrow = destinationArrows.find(".right-arrow");
+		// var leftArrow = destinationArrows.find(".left-arrow");
+		// rightArrow.removeClass("slideArrowEnd");
+		// leftArrow.removeClass("slideArrowEnd");
+
+
+
 		var leftPos = destinationContainer.scrollLeft();
 		var isArrowLeft = $(this).hasClass("left-arrow")
+		var containerLength = $(".grid-wrapper").width();
+		
 		if(isArrowLeft){
 			$(this).addClass("slide-left");
 			destinationContainer.animate({scrollLeft: leftPos - 4000}, 5000);	
@@ -292,6 +340,9 @@ $(document).ready(function(){
 			$(this).addClass("slide-right");
 			destinationContainer.animate({scrollLeft: leftPos + 4000}, 5000);
 	  	}
+	 //  	if(leftPos == 0 && isArrowLeft){ leftArrow.addClass("slideArrowEnd"); }
+		// if(leftPos >= containerLength && !isArrowLeft){ rightArrow.addClass("slideArrowEnd"); }
+
 	},
 	function(){
 		$(this).removeClass("slide-right");
@@ -304,7 +355,7 @@ $(document).ready(function(){
 	$(".image-screen").on("click", function(){
 		var photoTile = $(this).closest(".image-gallery-image");
 		var attrName = photoTile.attr("name");
-		var selector = "div[name='" + attrName + "']";
+		var selector = "article[name='" + attrName + "']";
 		var heroCounterPart = $(".featured-image-slider-container").find(selector);
 		var activeHero = $(".featured-image-slider-container").find(".active-img");
 		var elementList = selectSliderElements("image")
