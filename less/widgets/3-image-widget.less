@@ -9,11 +9,19 @@ div.regions-3-section{
 	
 	margin:auto;
 	height:250px;
+	@media (max-width: 600px) { 
+		padding:0; 
+		width:100% !important;
+	}
+	
 	&.one-column{
 		width:36%;
+		@media (max-width: 815px) and (orientation : landscape) {width:80% !important;}
+
 	}
 	&.two-column{
 		width:68%;
+		@media (max-width: 815px) and (orientation : landscape) {width:100% !important;}
 	}			
 	&.three-column{
 		width:100%;

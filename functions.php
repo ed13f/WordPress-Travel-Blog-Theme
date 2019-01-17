@@ -24,7 +24,7 @@ add_action( 'admin_init', 'wpdocs_register_my_setting' );
 
 //=====================================[INCLUDES]=====================================//
 include_once get_template_directory().'/inc/less-compiler.php';
-include_once get_template_directory().'/inc/reset.php';
+// include_once get_template_directory().'/inc/reset.php';
 
 
 //=====================================[POST TYPES]=====================================//

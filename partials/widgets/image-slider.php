@@ -9,7 +9,7 @@ $image_count = count($posts);
 
 
 <section class="<?php echo $container_class; ?>">
-	<?php if($image_count != 1 || $arrow_class == true){ partial('widgets.destination-scroll-arrows', ['arrow_class' => $arrow_class, "slide_arrow" => $slide_arrow]); } ?>
+	<?php if($image_count != 1 && $arrow_class == true){ partial('widgets.destination-scroll-arrows', ['arrow_class' => $arrow_class, "slide_arrow" => $slide_arrow]); } ?>
 		<?php foreach($posts as $post){ ?>
 			<article class="slider-image-wrapper <?php echo $counter == 1 ? 'active-img first-image' :''; ?> " name="id<?php echo strval($post->ID);?>">
 				<?php  echo get_the_post_thumbnail($post->ID); ?>

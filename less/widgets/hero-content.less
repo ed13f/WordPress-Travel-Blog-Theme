@@ -4,6 +4,15 @@ section.hero-content-wrapper{
     &.general-content p{
 	    @media (max-width: 600px) {display:none;} 
 	}
+	&.mobile-header-content{
+		top: 0;
+		z-index:10;
+		display:none;
+		background-color:rgba(6,74,82,0.85);
+		@media (max-width: 600px) {
+			display:initial;
+		} 
+	}
     & div.hero-short-screen{
 		height: 15vh;
 	    width: 100%;

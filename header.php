@@ -20,7 +20,10 @@
 		<!-- <script src="//code.jquery.com/jquery.hoverIntent.js"></script> -->
 
 
-		<?php wp_head(); ?>
+		<?php wp_head(); 
+
+		?>
 	</head>
 	<body <?php body_class() ?><?= is_singular() ? ' data-id="'.get_the_ID().'"' : '' ?>>
-		<?php do_action('body'); ?>
+		<?php do_action('body'); 
+		?>

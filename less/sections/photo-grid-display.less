@@ -1,5 +1,7 @@
 section.photo-grid-display{
 	margin:0 20px 0 10px;
+
+	@media (max-width: 600px), (max-width: 815px) and (orientation : landscape) {margin: 0;}
 	& .grid-wrapper{
 		display:flex;
 		height:725px;
@@ -9,15 +11,36 @@ section.photo-grid-display{
 		overflow:scroll;
 		overflow-y: hidden;
 		margin:auto;
+		@media (max-width: 600px) {
+			display: block;
+			height:initial;
+		}
+		@media (max-width: 815px) and (orientation : landscape) {
+			display: flex;
+    		flex-direction: column;
+    		height: 200px;
+		}
 
 		& .image-gallery-image{
 			height: 100px;
 			background-size: cover;
 			margin:10px;
 			background-position: center;
-			width: 362px;
+			width: 433px;
 			position:relative;
 			text-align: center;
+			@media (max-width: 815px) and (orientation : landscape){
+				width:50vw;
+			}
+			@media (max-width: 600px), (max-width: 815px) and (orientation : landscape){
+				margin:0 !important;
+				height:100% !important;
+			}
+			@media (max-width: 600px) {
+				margin: 0 !important;
+			    height: 250px !important;
+			    width: 100%;
+			}
 			& img{
 				object-fit: cover;
 				width: 100%;
@@ -34,6 +57,7 @@ section.photo-grid-display{
 				height:100%;
 				background-color: @color-7;
     			opacity: 0;
+    			@media (max-width: 600px), (max-width: 815px) and (orientation : landscape) {opacity:0 !important;}
 			}
 			.content-container{
 				width:100%;
@@ -45,6 +69,18 @@ section.photo-grid-display{
 				    top: 25%;
 				    pointer-events: none;
 				    text-shadow: 0px 0px 30px @color-7;
+				    @media (max-width: 815px) and (orientation : landscape) { 
+				    	opacity:1 !important;
+				    	opacity: 1 !important;
+					    // right: 20px;
+					    bottom: 30px;
+					    top: inherit; 
+					}
+				    @media (max-width: 600px) {
+				    	opacity:1 !important;
+				    	bottom: 0;
+    					top: initial;
+				    }
 				& .individual-photography-header{
 					// display:none;
 					// position: absolute;
@@ -53,6 +89,14 @@ section.photo-grid-display{
 				    font-size: 25px !important;
 				    // top: 40%;
 				    pointer-events: none;
+				    
+				    text-shadow: 0px 0px 20px #000000;
+				    @media (max-width: 815px) and (orientation : landscape) { display:none; }
+				    @media (max-width: 600px) {
+				    	text-align: right;
+   						padding-right: 25px;
+    					font-size: 17px !important;
+				    }    
 				}
 				& .view-photo{
 					color: white;
@@ -66,6 +110,15 @@ section.photo-grid-display{
 				    font-size:20px;
 				    // box-shadow: 0px 0px 1px @color-7;
 				    text-shadow: 0px 0px 30px @color-7;
+				    @media (max-width: 815px) and (orientation : landscape) { 
+				    	border: none;
+					    float: right;
+					    width: 120px;
+					    text-align: left;
+				    }
+				    @media (max-width: 600px) {
+				    	display:none;
+				    }
 				    & span{
 				    	color:@cta-color;
 				    }

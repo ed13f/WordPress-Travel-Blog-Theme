@@ -24,8 +24,10 @@
 				background-color: @color-7;
 				-webkit-transition: height 0.5s; /* Safari */
 		    	transition: height 0.5s;
-		    	@media (max-width: 950px) { padding:0; }
-				&.nav-img-resive{
+		    	@media (max-width: 950px) { padding:0 !important; }
+		    	// @media (max-width: 600px ), screen and (max-width: 830px ) and (orientation: landscape) {padding:0 0 15vh !important;}
+				&.nav-img-resive,
+				&.photo_page{
 					height:60px;
 					-webkit-transition: height 0.5s; /* Safari */
 		    		transition: height 0.5s;
@@ -88,7 +90,7 @@
 		display:none;
 	}
 }
-@media (max-width: 600px ), screen and (max-width: 830px ) and (orientation: landscape) {
+@media (max-width: 600px ), screen and (max-width: 830px ) {
 	nav{
 		background-color:@color-7;
 		div.main-menu-class{
@@ -98,21 +100,27 @@
 				display: flex;
 			    flex-direction: column;
 			    position: fixed;
-			    z-index: 5;
+			    z-index: 11;
 			    right: -100vw;
-			    height: 100vh;
+			    height: 100vh !important;
 			    width: 100vw;
 			    -webkit-transition: right 0.5s; /* Safari */
 	    		transition: right 0.5s;
 			    padding-top:50px;
 			    background-color: @color-7;
 			    padding:20vh 0;
+			    @media (orientation: landscape) {
+			    	padding:10vh 0 20vh !important;
+			    	line-height:40px;
+				}
 			    &.active-nav-menu{
 			    	right:0px;
 			    	-webkit-transition: right 0.5s; /* Safari */
 	    			transition: right 0.5s;
 			    }
 				& li#menu-item-114{
+					//test
+					display:none;
 					position: fixed;
 					width: 76px;
 					background-color: @color-7;
@@ -124,6 +132,7 @@
 					padding:10px 20px;
 					font-size:40px;
 					text-align: center;
+					width: 100vw;
 					& a{
 						display:initial;
 						color:#ffffff;
@@ -141,10 +150,14 @@
 		.mobile-menu-button{
 			position: fixed;
 		    display: initial;
-		    padding: 32px 38px;
-		    top:60px;
+		    // padding: 32px 38px;
+		    // top:60px;
+		    top:0;
+		    width: 75px;
+    		height: 60px;
 		    right: 0;
 		    z-index: 6;
+		    z-index: 35;
 		    background-color: @color-7;
 		    color:white;
 		    border: none;
@@ -165,12 +178,15 @@
 	    		transform: rotate(0deg);
 				&#menu-line-1{
 					top:10px;
+					top:8px;
 				}
 				&#menu-line-2{
 					top:20px;
+					top:18px;
 				}
 				&#menu-line-3{
 					top:30px;
+					top:28px;
 				}   
 			}
 		    &.clicked{

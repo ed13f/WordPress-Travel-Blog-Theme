@@ -5,6 +5,7 @@ $post = get_post($id);
 $main_content = $post->post_content;
 $hero_image_url = get_the_post_thumbnail_url($id);
 $feature_img_id = get_post_thumbnail_id( $id );
+$preview_word_count = 15;
 
 $main_content = apply_filters('the_content', $main_content);
 $lower_content = get_field('lower_content', $id);
@@ -42,6 +43,6 @@ partial('heros.destination-hero', ['hero_image_url' => $hero_image_url]);
 partial('sections.content', ['content'=> $main_content]);
 partial('sections.featured-image-slider', ['args' => $feat_img_args]);
 partial('sections.content', ['content'=> $lower_content]);
-partial('sections.recent-trips', [ 'title' => 'Other Related Trips', 'args' => $args]);
+partial('sections.recent-trips', [ 'title' => 'Other Related Trips', 'args' => $args, 'preview_word_count'=> $preview_word_count]);
 get_footer();
 ?>
