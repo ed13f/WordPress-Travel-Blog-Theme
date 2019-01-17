@@ -11,8 +11,14 @@ section.continent-group{
 	}	
 	& .continent-group-content{
 		flex:2;
+		@media (max-width: 815px) and (orientation : landscape) {
+			margin:0;
+		}
 		.continent-group-content-container{
 			padding: 40px 3vw 40px;
+			@media (max-width: 815px) and (orientation : landscape) {
+				padding: 60px 3vw 40px;
+			}
 			& h2{
 				text-align:center;
 				padding-right: 2%;
@@ -21,6 +27,9 @@ section.continent-group{
 				max-height: 195px;
 	    		overflow: hidden;
 	    		padding-right: 2%;
+	    		@media (max-width: 815px) and (orientation : landscape) {
+					display:none;
+				}
 			}
 		}	
 	}
@@ -33,6 +42,9 @@ section.continent-group{
 		overflow-x: hidden;
 		overflow-y: overlay;
 		height:400px;
+		@media (max-width: 815px) and (orientation : landscape) {
+			height: 250px;
+		}
 		@media (max-width: 600px) { width: 100vw; }
 		& ::-webkit-scrollbar { 
 		    display: none; 
@@ -48,6 +60,7 @@ section.continent-group{
 				position:relative;
 				@media (max-width: 600px) { 
 					width: 96vw;
+					width: 100vw;
 					margin:0 auto;
 				 }
 			}	

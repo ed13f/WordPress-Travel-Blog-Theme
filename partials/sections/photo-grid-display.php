@@ -14,6 +14,7 @@ $posts = $wp_query->posts;
 $arrow_class = 'image-display-arrows';
 wp_reset_query();
 
+
 ?>
 
 <section class="photo-grid-display continent-group-wrapper">
@@ -23,7 +24,8 @@ wp_reset_query();
 			<article class="image-gallery-image <?php echo( in_array($left_image_count, [0,1,2]) ? ' left-column' : ''); ?>" style="height:<?php echo $num_array[$count]; ?>px; margin-top:<?php echo is_float( $count / 3 ) ? '' : $height_staddered_array[$count]; ?>px; " name="id<?php echo strval($post->ID);?>">
 				<?php  echo get_the_post_thumbnail($post->ID); ?>
 				<div class="content-container">
-					<h2 class="individual-photography-header"><?php echo get_the_title($post->ID); ?></h2>
+					<?php $parent_post_id = get_field("destination_tag", $post->ID)[0]; ?>
+					<h2 class="individual-photography-header"><?php echo get_the_title($parent_post_id); ?></h2>
 					<button class="view-photo">View <span>&rarr;</span></button>
 				</div>
 				<div class="image-screen">

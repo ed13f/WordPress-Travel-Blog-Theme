@@ -46,7 +46,7 @@
 	&.continent-group-tile{
 		width:100%;
 		margin-right:-4px;
-		margin-left: 10px;
+		// margin-left: 10px;
 		position:relative;
 		& h3.tile-title{
 			margin-top: 145px;
@@ -79,6 +79,10 @@
 		top: 25%;
 		z-index:1;
 		width: 100%;
+		pointer-events:none;
+		@media (max-width: 815px) and (orientation : landscape) {
+			top:15%;
+		}
 		& h2.tile-title{
 			// margin-top:75px;
 			z-index:5;
@@ -103,6 +107,7 @@
     		word-break: break-all;
     		white-space: normal;
     		width:100%;
+    		@media (max-width: 650px), (max-width: 815px) and (orientation : landscape) { opacity:1;}
 
     		& .view-tile{
     			color:@cta-color !important;

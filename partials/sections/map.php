@@ -36,6 +36,7 @@ $wpQueryJson = json_encode($modified_post_objects_list);
     </div>
     
     <div class="map-screen"></div> 
+    <div class="map-mobile-scroll-arrow fa fa-chevron-down"></div>
     <div id="map"></div>
   </header>  
     <script>
@@ -58,8 +59,9 @@ $wpQueryJson = json_encode($modified_post_objects_list);
           disableDefaultUI: false,
           maxZoom:5,
           minZoom:2.5,
+          gestureHandling: "greedy",
           
-          gestureHandling: 'cooperative',
+          // gestureHandling: 'cooperative',
           center: new google.maps.LatLng(35.2271,-80.8431),
           mapTypeId: 'terrain',
           styles: [
@@ -373,7 +375,7 @@ $wpQueryJson = json_encode($modified_post_objects_list);
             var icon = {
                 // url: 'http://ricodesantis.com/images/travel_blog/Red_Pin_Emoji.png',
 
-                url: 'http://localhost/travel_blog/wp-content/uploads/2018/11/kisspng-computer-icons-desktop-wallpaper-map-map-marker-5ad714f2688af9.7464394615240450424282.png',
+                url: '<?php echo get_template_directory_uri();?>/images/orange-blue-map-icon.png',
                 
 
                 scaledSize: new google.maps.Size(40, 40),
@@ -407,7 +409,7 @@ $wpQueryJson = json_encode($modified_post_objects_list);
                          '</div>' + 
                         '</div>' +
                         "<div >" +
-                        "<img style='width:20%; height:20px; margin-right: -25px;' src='http://localhost/travel_blog/wp-content/uploads/2018/11/Black_triangle.png'/>" +
+                        "<img style='width:20%; height:20px; margin-right: -25px;' src='<?php echo get_template_directory_uri();?>/images/blue_triangle.png'/>" +
 
                         '</div>' +
                       "</a>"

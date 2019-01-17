@@ -4,11 +4,12 @@ section.featured-image-slider-container{
 		height: 100%;
 		width:90%;
 		margin:0 auto;
+		@media (max-width: 600px), (max-width: 815px) and (orientation : landscape) { width:100%; }
 	}
 	&.featured-image-hero{
 		margin-top: 60px;
-		@media (max-width: 600px) { margin-top: 0px; }
 		height:100% !important;
+		@media (max-width: 600px), (max-width: 815px) and (orientation : landscape) { margin-top: 0px; }
 		& .slider-image-wrapper{
 			height:100% !important;
 			& img{
@@ -40,7 +41,7 @@ section.featured-image-slider-container{
 		display:none;
 		width:100%;
 		// height:90vh;
-		height:40vw;
+		height:45vw;
 		background-size: cover;
 		position: absolute;
 		@media (max-width: 600px) { height:100%; }
@@ -50,12 +51,17 @@ section.featured-image-slider-container{
 			right: 10%;
 			padding-bottom: 10px;
 			@media (max-width: 600px) { display:none; }
+			@media (max-width: 815px) and (orientation : landscape) { 
+				// bottom:30px !important;
+				bottom:11vh !important;
+			}
 			& .photo-location{
 				z-index: 40;
 				color: white;
 				line-height: 30px;
 				font-size: 30px !important;
-				text-shadow: 0px 0px 30px #000000
+				text-shadow: 0px 0px 30px #000000;
+				@media (max-width: 815px) and (orientation : landscape) { font-size:20px !important;}
 			}
 			& .photo-subtext{
 				    z-index: 40;
@@ -69,9 +75,10 @@ section.featured-image-slider-container{
 		img{
 			width:100%;
 			margin:0;
+			object-fit:cover;
 			position:absolute;
 			z-index:-1;
-			height: 40vw;
+			height: 45vw;
 			box-shadow: 0px 0px 2px #000000;
 			@media (max-width: 600px) { 
 				height:100%;
@@ -94,9 +101,9 @@ section.featured-image-slider-container{
 		top:50px;
 		right:10%;
 		z-index:5;
-		@media (max-width: 650px) { display:none; }
+		@media (max-width: 650px), (max-width: 815px) and (orientation : landscape) { display:none; }
 		&.photo-header{
-			top:90px;
+			top:40px;
 			z-index: 6;
 		}
 		// z-index:4;

@@ -78,7 +78,7 @@ $(document).ready(function(){
 	}
 
 	$(".slider-dot").on("click", function(){
-		if(featureImageAnimationActive == true){return}
+		if(featureImageAnimationActive == true || $(this).hasClass("active-dot")){return}
 		featureImageAnimationActive = true;
 		var index = $(".slider-dot").index($(this))
 		dotClicktransition("image", index)
@@ -211,11 +211,11 @@ $(document).ready(function(){
 			var leftPos = sliderContainer.scrollLeft();
 			var isArrowLeft = $(this).hasClass("left-arrow");
 			if(isArrowLeft){
-				sliderContainer.animate({scrollLeft: leftPos - screenWidth - 10}, 1000, function(){
+				sliderContainer.animate({scrollLeft: leftPos - screenWidth}, 1000, function(){
 					tile.removeClass("active-animation");
 				});	
 			} else{
-				sliderContainer.animate({scrollLeft: leftPos + screenWidth + 10}, 1000, function(){
+				sliderContainer.animate({scrollLeft: leftPos + screenWidth}, 1000, function(){
 					tile.removeClass("active-animation");
 				});
 		  	}
@@ -432,6 +432,12 @@ $(".mobile-menu-button").on("click", function(){
 
 	}
 	
+})
+$(".map-mobile-scroll-arrow").on("click", function(){
+	$([document.documentElement, document.body]).animate({
+        scrollTop: $(".content").offset().top
+    }, 1000);
+
 })
 
 
